@@ -1,0 +1,179 @@
+---
+const technicalSkills = [
+  { name: "Python", level: 90 },
+  { name: "R", level: 85 },
+  { name: "SQL", level: 80 },
+  { name: "Machine Learning", level: 85 },
+  { name: "Deep Learning", level: 75 },
+  { name: "Estadística", level: 90 },
+  { name: "Visualización de Datos", level: 85 },
+  { name: "Big Data", level: 70 }
+];
+
+const softSkills = [
+  { name: "Resolución de Problemas", level: 90 },
+  { name: "Comunicación", level: 85 },
+  { name: "Trabajo en Equipo", level: 85 },
+  { name: "Adaptabilidad", level: 80 }
+];
+---
+
+<section id="habilidades" class="skills">
+  <div class="container">
+    <h2 class="section-title">Habilidades</h2>
+
+    <div class="skills-container">
+      <div class="skills-column">
+        <h3>Habilidades Técnicas</h3>
+        <div class="skills-list">
+          {technicalSkills.map(skill => (
+            <div class="skill">
+              <div class="skill-info">
+                <span class="skill-name">{skill.name}</span>
+                <span class="skill-percentage">{skill.level}%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-level" style={`width: ${skill.level}%`}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="skills-column">
+        <h3>Habilidades Personales</h3>
+        <div class="skills-list">
+          {softSkills.map(skill => (
+            <div class="skill">
+              <div class="skill-info">
+                <span class="skill-name">{skill.name}</span>
+                <span class="skill-percentage">{skill.level}%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-level soft" style={`width: ${skill.level}%`}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="tools-container">
+          <h3>Herramientas y Tecnologías</h3>
+          <div class="tools-grid">
+            <div class="tool">TensorFlow</div>
+            <div class="tool">PyTorch</div>
+            <div class="tool">Scikit-learn</div>
+            <div class="tool">Pandas</div>
+            <div class="tool">NumPy</div>
+            <div class="tool">Tableau</div>
+            <div class="tool">Power BI</div>
+            <div class="tool">Git</div>
+            <div class="tool">Docker</div>
+            <div class="tool">AWS</div>
+            <div class="tool">Spark</div>
+            <div class="tool">Hadoop</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills {
+    background-color: white;
+  }
+
+  .skills-container {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .skills-column {
+    flex: 1;
+  }
+
+  .skills-column h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+  }
+
+  .skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+
+  .skill-name {
+    font-weight: 500;
+  }
+
+  .skill-percentage {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .skill-bar {
+    height: 8px;
+    background-color: var(--color-border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .skill-level {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+  }
+
+  .skill-level.soft {
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  }
+
+  .tools-container {
+    margin-top: 3rem;
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .tool {
+    background-color: var(--color-background);
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    transition: all 0.2s ease;
+  }
+
+  .tool:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-accent-light);
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .skills-container {
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .tools-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
