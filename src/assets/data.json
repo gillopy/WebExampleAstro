@@ -39,8 +39,8 @@
     },
     "projects": [
     {
-        "title": "Predicción de Precios Inmobiliarios",
-        "description": "Desarrollo de un modelo de Machine Learning para predecir precios de propiedades inmobiliarias utilizando datos históricos y variables socioeconómicas.",
+        "title": "Heart Disease Prediction",
+        "description": "Desarrollo de un modelo de Machine Learning para predecir la presencia de enfermedad cardiacas.",
         "technologies": ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
         "image": "project1.jpg",
         "links": {
@@ -49,9 +49,9 @@
         }
     },
     {
-        "title": "Análisis de Sentimiento en Redes Sociales",
-        "description": "Implementación de un sistema de análisis de sentimiento para monitorizar la percepción de marca en Twitter utilizando técnicas de NLP.",
-        "technologies": ["Python", "NLTK", "TensorFlow", "Twitter API"],
+        "title": "Remote Sensing Analysis",
+        "description": "Análisis de imágenes satelitales para la detección de cambios en la cobertura vegetal.",
+        "technologies": ["Python", "Rioxarray", "TensorFlow", "Matplotlib"],
         "image": "project2.jpg",
         "links": {
         "demo": "#",
@@ -61,8 +61,8 @@
     ],
     "contact": {
     "title": "Contacto",
-    "description": "Estoy disponible para proyectos freelance, oportunidades laborales y colaboraciones en proyectos de análisis de datos y machine learning.",
-    "email": "guillermo@ejemplo.com",
-    "location": "Madrid, España"
+    "description": "Estoy disponible para proyectos de analisis de datos en general, oportunidades laborales y colaboraciones en proyectos de análisis de datos y machine learning.",
+    "email": "guillermocabrera9710@hotmail.com",
+    "location": "Asunción, Paraguay"
     }
 }
