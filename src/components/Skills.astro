@@ -8,11 +8,12 @@ const { skills } = data;
     <h2 class="section-title">Habilidades</h2>
 
     <div class="skills-container">
+      <!-- Columna de habilidades técnicas -->
       <div class="skills-column">
         <h3>Habilidades Técnicas</h3>
         <div class="skills-list">
           {skills.technical.map((skill, index) => (
-            <div class="skill" key={index}>
+            <div class="skill">
               <div class="skill-info">
                 <span class="skill-name">{skill.name}</span>
                 <span class="skill-percentage">{skill.level}%</span>
@@ -25,11 +26,12 @@ const { skills } = data;
         </div>
       </div>
 
+      <!-- Columna de habilidades personales y herramientas -->
       <div class="skills-column">
         <h3>Habilidades Personales</h3>
         <div class="skills-list">
           {skills.soft.map((skill, index) => (
-            <div class="skill" key={index}>
+            <div class="skill">
               <div class="skill-info">
                 <span class="skill-name">{skill.name}</span>
                 <span class="skill-percentage">{skill.level}%</span>
@@ -41,11 +43,12 @@ const { skills } = data;
           ))}
         </div>
 
+        <!-- Sección de herramientas y tecnologías -->
         <div class="tools-container">
           <h3>Herramientas y Tecnologías</h3>
           <div class="tools-grid">
             {skills.tools.map((tool, index) => (
-              <div class="tool" key={index}>{tool}</div>
+              <div class="tool">{tool}</div>
             ))}
           </div>
         </div>
@@ -57,6 +60,7 @@ const { skills } = data;
 <style>
   .skills {
     background-color: white;
+    padding: 5rem 0;
   }
 
   .skills-container {
@@ -88,6 +92,7 @@ const { skills } = data;
 
   .skill-name {
     font-weight: 500;
+    color: var(--color-primary);
   }
 
   .skill-percentage {

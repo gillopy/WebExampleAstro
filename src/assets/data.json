@@ -38,21 +38,21 @@
     ]
     },
     "projects": [
-    {
-        "title": "Heart Disease Prediction",
-        "description": "Desarrollo de un modelo de Machine Learning para predecir la presencia de enfermedad cardiacas.",
-        "technologies": ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
-        "image": "project1.jpg",
-        "links": {
-        "demo": "#",
-        "github": "#"
-        }
-    },
+        {
+            "title": "Predicción de Precios Inmobiliarios",
+            "description": "Desarrollo de un modelo de Machine Learning para predecir precios de propiedades inmobiliarias utilizando datos históricos y variables socioeconómicas.",
+            "technologies": ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
+            "image": "project1",
+            "links": {
+            "demo": "#",
+            "github": "#"
+            }
+        },
     {
         "title": "Remote Sensing Analysis",
         "description": "Análisis de imágenes satelitales para la detección de cambios en la cobertura vegetal.",
         "technologies": ["Python", "Rioxarray", "TensorFlow", "Matplotlib"],
-        "image": "project2.jpg",
+        "image": "project2",
         "links": {
         "demo": "#",
         "github": "#"
