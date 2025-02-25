@@ -1,21 +1,6 @@
 ---
-const technicalSkills = [
-  { name: "Python", level: 90 },
-  { name: "R", level: 85 },
-  { name: "SQL", level: 80 },
-  { name: "Machine Learning", level: 85 },
-  { name: "Deep Learning", level: 75 },
-  { name: "Estadística", level: 90 },
-  { name: "Visualización de Datos", level: 85 },
-  { name: "Big Data", level: 70 }
-];
-
-const softSkills = [
-  { name: "Resolución de Problemas", level: 90 },
-  { name: "Comunicación", level: 85 },
-  { name: "Trabajo en Equipo", level: 85 },
-  { name: "Adaptabilidad", level: 80 }
-];
+import data from '../assets/data.json';
+const { skills } = data;
 ---
 
 <section id="habilidades" class="skills">
@@ -26,8 +11,8 @@ const softSkills = [
       <div class="skills-column">
         <h3>Habilidades Técnicas</h3>
         <div class="skills-list">
-          {technicalSkills.map(skill => (
-            <div class="skill">
+          {skills.technical.map((skill, index) => (
+            <div class="skill" key={index}>
               <div class="skill-info">
                 <span class="skill-name">{skill.name}</span>
                 <span class="skill-percentage">{skill.level}%</span>
@@ -43,8 +28,8 @@ const softSkills = [
       <div class="skills-column">
         <h3>Habilidades Personales</h3>
         <div class="skills-list">
-          {softSkills.map(skill => (
-            <div class="skill">
+          {skills.soft.map((skill, index) => (
+            <div class="skill" key={index}>
               <div class="skill-info">
                 <span class="skill-name">{skill.name}</span>
                 <span class="skill-percentage">{skill.level}%</span>
@@ -59,18 +44,9 @@ const softSkills = [
         <div class="tools-container">
           <h3>Herramientas y Tecnologías</h3>
           <div class="tools-grid">
-            <div class="tool">TensorFlow</div>
-            <div class="tool">PyTorch</div>
-            <div class="tool">Scikit-learn</div>
-            <div class="tool">Pandas</div>
-            <div class="tool">NumPy</div>
-            <div class="tool">Tableau</div>
-            <div class="tool">Power BI</div>
-            <div class="tool">Git</div>
-            <div class="tool">Docker</div>
-            <div class="tool">AWS</div>
-            <div class="tool">Spark</div>
-            <div class="tool">Hadoop</div>
+            {skills.tools.map((tool, index) => (
+              <div class="tool" key={index}>{tool}</div>
+            ))}
           </div>
         </div>
       </div>

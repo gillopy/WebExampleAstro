@@ -1,16 +1,16 @@
 ---
+import data from '../assets/data.json';
+const { contact } = data;
 ---
 
 <section id="contacto" class="contact">
   <div class="container">
-    <h2 class="section-title">Contacto</h2>
+    <h2 class="section-title">{contact.title}</h2>
     
     <div class="contact-container">
       <div class="contact-info">
         <h3>¿Hablamos?</h3>
-        <p>
-          Estoy disponible para proyectos freelance, oportunidades laborales y colaboraciones en proyectos de análisis de datos y machine learning.
-        </p>
+        <p>{contact.description}</p>
         
         <div class="info-item">
           <div class="info-icon">
@@ -20,7 +20,7 @@
           </div>
           <div class="info-content">
             <h4>Email</h4>
-            <a href="mailto:guillermo@ejemplo.com">guillermo@ejemplo.com</a>
+            <a href={`mailto:${contact.email}`}>{contact.email}</a>
           </div>
         </div>
         
@@ -33,7 +33,7 @@
           </div>
           <div class="info-content">
             <h4>Ubicación</h4>
-            <p>Madrid, España</p>
+            <p>{contact.location}</p>
           </div>
         </div>
       </div>

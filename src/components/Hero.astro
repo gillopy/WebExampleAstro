@@ -1,13 +1,15 @@
 ---
+import data from '../assets/data.json';
+const { personalInfo } = data;
 ---
 
 <section id="inicio" class="hero">
   <div class="container">
     <div class="hero-content">
       <div class="hero-text">
-        <h1>Guillermo Cabrera</h1>
-        <h2>Científico de Datos & Analista Estadístico</h2>
-        <p>Transformando datos en insights accionables para impulsar decisiones basadas en evidencia</p>
+        <h1>{personalInfo.name}</h1>
+        <h2>{personalInfo.title}</h2>
+        <p>{personalInfo.description}</p>
         <div class="hero-btns">
           <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
           <a href="#contacto" class="btn btn-outline">Contacto</a>

@@ -1,0 +1,68 @@
+{
+    "personalInfo": {
+    "name": "Guillermo Cabrera",
+    "title": "Economist, Datascientist, Statistician",
+    "email": "guillermocabrera9710@hotmail.com",
+    "location": "Asunción, Paraguay",
+    "availability": "Analista",
+    "description": "Analisis de datos para la toma de decisiones estratégicas",
+    "cvLink": "#"
+    },
+    "about": {
+    "title": "Sobre Mí",
+    "description": [
+        "Con más de 8 años de experiencia en análisis estadístico y economico, me especializo en el desarrollo de modelos predictivos y en el análisis de grandes volúmenes de datos para extraer insights valiosos que guíen la toma de decisiones estratégicas.",
+        "Mi formación en Economía y Estadística, complementada con especialización en Machine Learning y Big Data, me permite abordar problemas complejos con un enfoque multidisciplinario, combinando técnicas estadísticas avanzadas con conocimientos de negocio para ofrecer soluciones efectivas."
+    ],
+    "image": "profile.jpg"
+    },
+    "skills": {
+    "technical": [
+        { "name": "Python", "level": 90 },
+        { "name": "R", "level": 85 },
+        { "name": "SQL", "level": 80 },
+        { "name": "Machine Learning", "level": 85 },
+        { "name": "Deep Learning", "level": 75 },
+        { "name": "Estadística", "level": 90 },
+        { "name": "Visualización de Datos", "level": 85 },
+        { "name": "Big Data", "level": 70 }
+    ],
+    "soft": [
+        { "name": "Resolución de Problemas", "level": 90 },
+        { "name": "Comunicación", "level": 85 },
+        { "name": "Trabajo en Equipo", "level": 85 },
+        { "name": "Adaptabilidad", "level": 80 }
+    ],
+    "tools": [
+        "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy", "Tableau", "Power BI", "Git", "Docker", "AWS", "Spark", "Hadoop"
+    ]
+    },
+    "projects": [
+    {
+        "title": "Predicción de Precios Inmobiliarios",
+        "description": "Desarrollo de un modelo de Machine Learning para predecir precios de propiedades inmobiliarias utilizando datos históricos y variables socioeconómicas.",
+        "technologies": ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
+        "image": "project1.jpg",
+        "links": {
+        "demo": "#",
+        "github": "#"
+        }
+    },
+    {
+        "title": "Análisis de Sentimiento en Redes Sociales",
+        "description": "Implementación de un sistema de análisis de sentimiento para monitorizar la percepción de marca en Twitter utilizando técnicas de NLP.",
+        "technologies": ["Python", "NLTK", "TensorFlow", "Twitter API"],
+        "image": "project2.jpg",
+        "links": {
+        "demo": "#",
+        "github": "#"
+        }
+    }
+    ],
+    "contact": {
+    "title": "Contacto",
+    "description": "Estoy disponible para proyectos freelance, oportunidades laborales y colaboraciones en proyectos de análisis de datos y machine learning.",
+    "email": "guillermo@ejemplo.com",
+    "location": "Madrid, España"
+    }
+}
