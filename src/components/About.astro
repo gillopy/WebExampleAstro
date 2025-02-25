@@ -9,13 +9,13 @@ const { about, personalInfo } = data;
     <div class="about-content">
       <div class="about-image">
         <div class="image-border">
-          <img src={about.image} alt={personalInfo.name} class="profile-image" />
+          <img src="/profile.jpg" alt={personalInfo.name} class="profile-image" />
         </div>
       </div>
       <div class="about-text">
         <h3>{personalInfo.title}</h3>
-        {about.description.map((paragraph, index) => (
-          <p>{paragraph}</p> <!-- Eliminé la propiedad key -->
+        {about.description.map((paragraph) => (
+          <p>{paragraph}</p>
         ))}
         <div class="about-details">
           <div class="detail">
@@ -42,6 +42,7 @@ const { about, personalInfo } = data;
 <style>
   .about {
     background-color: #F8FAFC;
+    padding: 4rem 0; /* Agregado padding para mejor espaciado */
   }
 
   .about-content {
@@ -61,14 +62,15 @@ const { about, personalInfo } = data;
     height: 300px;
     padding: 10px;
     border: 3px solid var(--color-accent);
-    border-radius: 5px;
+    border-radius: 50%; /* Cambio a borde redondeado para consistencia */
     position: relative;
+    overflow: hidden; /* Asegura que la imagen no sobresalga */
   }
 
   .profile-image {
     width: 100%;
     height: 100%;
-    border-radius: 5px;
+    border-radius: 50%; /* Consistencia con el borde */
     object-fit: cover;
   }
 

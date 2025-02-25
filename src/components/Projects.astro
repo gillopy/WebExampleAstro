@@ -6,12 +6,11 @@ const { projects } = data;
 <section id="proyectos" class="projects">
   <div class="container">
     <h2 class="section-title">Proyectos</h2>
-    
+
     <div class="projects-grid">
       {projects.map((project) => (
         <div class="project-card">
           <div class="project-image">
-            <!-- Cargar la imagen SVG desde la carpeta public/project/ -->
             <img src={`/project/${project.image}.svg`} alt={project.title} class="project-img" />
           </div>
           <div class="project-details">
@@ -30,7 +29,7 @@ const { projects } = data;
         </div>
       ))}
     </div>
-    
+
     <div class="projects-cta">
       <a href="#" class="btn btn-primary">Ver Más Proyectos</a>
     </div>

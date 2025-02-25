@@ -8,11 +8,10 @@ const { skills } = data;
     <h2 class="section-title">Habilidades</h2>
 
     <div class="skills-container">
-      <!-- Columna de habilidades técnicas -->
       <div class="skills-column">
         <h3>Habilidades Técnicas</h3>
         <div class="skills-list">
-          {skills.technical.map((skill, index) => (
+          {skills.technical.map((skill) => (
             <div class="skill">
               <div class="skill-info">
                 <span class="skill-name">{skill.name}</span>
@@ -26,11 +25,10 @@ const { skills } = data;
         </div>
       </div>
 
-      <!-- Columna de habilidades personales y herramientas -->
       <div class="skills-column">
         <h3>Habilidades Personales</h3>
         <div class="skills-list">
-          {skills.soft.map((skill, index) => (
+          {skills.soft.map((skill) => (
             <div class="skill">
               <div class="skill-info">
                 <span class="skill-name">{skill.name}</span>
@@ -43,11 +41,10 @@ const { skills } = data;
           ))}
         </div>
 
-        <!-- Sección de herramientas y tecnologías -->
         <div class="tools-container">
           <h3>Herramientas y Tecnologías</h3>
           <div class="tools-grid">
-            {skills.tools.map((tool, index) => (
+            {skills.tools.map((tool) => (
               <div class="tool">{tool}</div>
             ))}
           </div>
