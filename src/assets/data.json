@@ -1,68 +1,110 @@
 {
     "personalInfo": {
-    "name": "Guillermo Cabrera",
-    "title": "Economist, Datascientist, Statistician",
-    "email": "guillermocabrera9710@hotmail.com",
-    "location": "Asunción, Paraguay",
-    "availability": "Analista",
-    "description": "Analisis de datos para la toma de decisiones estratégicas",
-    "cvLink": "#"
+        "name": "Guillermo Cabrera",
+        "title": "Economist, Data Scientist, Statistician",
+        "email": "guillermocabrera9710@hotmail.com",
+        "location": "Asunción, Paraguay",
+        "availability": "Completo",
+        "description": "Análisis de datos para la toma de decisiones estratégicas",
+        "cvLink": "#"
     },
     "about": {
-    "title": "Sobre Mí",
-    "description": [
-        "Con más de 8 años de experiencia en análisis estadístico y economico, me especializo en el desarrollo de modelos predictivos y en el análisis de grandes volúmenes de datos para extraer insights valiosos que guíen la toma de decisiones estratégicas.",
-        "Mi formación en Economía y Estadística, complementada con especialización en Machine Learning y Big Data, me permite abordar problemas complejos con un enfoque multidisciplinario, combinando técnicas estadísticas avanzadas con conocimientos de negocio para ofrecer soluciones efectivas."
-    ],
-    "image": "profile.jpg"
+        "title": "Sobre Mí",
+        "description": [
+            "Soy un economista y científico de datos con más de 8 años de experiencia en análisis económico, modelado estadístico y machine learning. Me especializo en el desarrollo de modelos predictivos y en el análisis de datos a gran escala para optimizar la toma de decisiones estratégicas.",
+            "Mi experiencia abarca desde la limpieza y exploración de datos hasta la implementación de soluciones de inteligencia artificial. He trabajado en sectores como mercados financieros, predicción de ventas y análisis de imágenes satelitales para el monitoreo medioambiental."
+        ],
+        "image": "profile.jpg"
     },
     "skills": {
-    "technical": [
-        { "name": "Python", "level": 90 },
-        { "name": "R", "level": 85 },
-        { "name": "SQL", "level": 80 },
-        { "name": "Machine Learning", "level": 85 },
-        { "name": "Deep Learning", "level": 75 },
-        { "name": "Estadística", "level": 90 },
-        { "name": "Visualización de Datos", "level": 85 },
-        { "name": "Big Data", "level": 70 }
-    ],
-    "soft": [
-        { "name": "Resolución de Problemas", "level": 90 },
-        { "name": "Comunicación", "level": 85 },
-        { "name": "Trabajo en Equipo", "level": 85 },
-        { "name": "Adaptabilidad", "level": 80 }
-    ],
-    "tools": [
-        "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy", "Tableau", "Power BI", "Git", "Docker", "AWS", "Spark", "Hadoop"
-    ]
+        "technical": [
+            { "name": "Python", "level": 90 },
+            { "name": "R", "level": 85 },
+            { "name": "SQL", "level": 80 },
+            { "name": "Machine Learning", "level": 85 },
+            { "name": "Deep Learning", "level": 75 },
+            { "name": "Estadística", "level": 90 },
+            { "name": "Econometría", "level": 85 },
+            { "name": "Visualización de Datos", "level": 85 },
+            { "name": "Big Data", "level": 75 }
+        ],
+        "soft": [
+            { "name": "Resolución de Problemas", "level": 90 },
+            { "name": "Pensamiento Analítico", "level": 90 },
+            { "name": "Comunicación", "level": 85 },
+            { "name": "Trabajo en Equipo", "level": 85 },
+            { "name": "Adaptabilidad", "level": 80 }
+        ],
+        "tools": [
+            "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy", "XGBoost", "RNN", "CNN", "Docker", "GIT", "Poetry", "Hadoop", "Tableau", "Power BI"
+        ]
     },
     "projects": [
         {
-            "title": "Predicción de Precios Inmobiliarios",
-            "description": "Desarrollo de un modelo de Machine Learning para predecir precios de propiedades inmobiliarias utilizando datos históricos y variables socioeconómicas.",
+            "title": "Heart Disease Predictions",
+            "description": "Desarrollo de un modelo de Machine Learning para predecir precios de propiedades inmobiliarias utilizando datos históricos y variables macroeconómicas.",
             "technologies": ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
             "image": "project1",
             "links": {
-            "demo": "#",
-            "github": "#"
+                "demo": "#",
+                "github": "#"
             }
         },
-    {
-        "title": "Remote Sensing Analysis",
-        "description": "Análisis de imágenes satelitales para la detección de cambios en la cobertura vegetal.",
-        "technologies": ["Python", "Rioxarray", "TensorFlow", "Matplotlib"],
-        "image": "project2",
-        "links": {
-        "demo": "#",
-        "github": "#"
+        {
+            "title": "Remote Sensing Analysis",
+            "description": "Análisis de imágenes satelitales para la detección de cambios en la cobertura vegetal y evaluación de impactos medioambientales.",
+            "technologies": ["Python", "Rioxarray", "TensorFlow", "OpenCV"],
+            "image": "project2",
+            "links": {
+                "demo": "#",
+                "github": "#"
+            }
+        },
+        {
+            "title": "Used Cars Sales Analysis",
+            "description": "Exploración y modelado de datos de ventas en comercios minoristas, aplicando series temporales y clustering para identificar patrones de consumo.",
+            "technologies": ["Python", "Pandas", "Statsmodels", "Prophet"],
+            "image": "project5",
+            "links": {
+                "demo": "#",
+                "github": "#"
+            }
+        },
+        {
+            "title": "Retail Sales Forecasting",
+            "description": "Desarrollo de modelos de series temporales para estimar la evolución del tipo de cambio con respecto al dólar, integrando análisis macroeconómico.",
+            "technologies": ["R", "Python", "Statsmodels", "EViews"],
+            "image": "project3",
+            "links": {
+                "demo": "#",
+                "github": "#"
+            }
+        },
+        {
+            "title": "Wine Quality PCA",
+            "description": "Desarrollo de un modelo de Machine Learning para predecir precios de propiedades inmobiliarias utilizando datos históricos y variables macroeconómicas.",
+            "technologies": ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
+            "image": "project4",
+            "links": {
+                "demo": "#",
+                "github": "#"
+            }
+        },
+        {
+            "title": "LGBMClassifier",
+            "description": "Desarrollo de un modelo de Machine Learning para predecir precios de propiedades inmobiliarias utilizando datos históricos y variables macroeconómicas.",
+            "technologies": ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
+            "image": "project6",
+            "links": {
+                "demo": "#",
+                "github": "#"
+            }
         }
-    }
     ],
     "contact": {
-    "title": "Contacto",
-    "description": "Estoy disponible para proyectos de analisis de datos en general, oportunidades laborales y colaboraciones en proyectos de análisis de datos y machine learning.",
-    "email": "guillermocabrera9710@hotmail.com",
-    "location": "Asunción, Paraguay"
+        "title": "Contacto",
+        "description": "Estoy disponible para oportunidades laborales y colaboraciones en proyectos de análisis de datos, machine learning y econometría.",
+        "email": "guillermocabrera9710@hotmail.com",
+        "location": "Asunción, Paraguay"
     }
 }

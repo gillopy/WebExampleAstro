@@ -6,12 +6,10 @@ const { contact } = data;
 <section id="contacto" class="contact">
   <div class="container">
     <h2 class="section-title">{contact.title}</h2>
-
     <div class="contact-container">
       <div class="contact-info">
         <h3>¿Hablamos?</h3>
         <p>{contact.description}</p>
-
         <div class="info-item">
           <div class="info-icon">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -23,7 +21,6 @@ const { contact } = data;
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
           </div>
         </div>
-
         <div class="info-item">
           <div class="info-icon">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -37,7 +34,6 @@ const { contact } = data;
           </div>
         </div>
       </div>
-
       <form class="contact-form">
         <div class="form-group">
           <input type="text" placeholder="Nombre" required />
@@ -56,52 +52,53 @@ const { contact } = data;
 
 <style>
   .contact {
-    background-color: white;
+    background-color: #fff;
+    padding: 4rem 0;
   }
-  
+
   .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
   }
-  
+
   .contact-info {
     padding-right: 2rem;
   }
-  
+
   .info-item {
     display: flex;
     gap: 1rem;
     margin: 2rem 0;
   }
-  
+
   .info-icon {
     flex-shrink: 0;
     width: 40px;
     height: 40px;
-    background-color: var(--color-accent-light);
+    background-color: var(--color-background);
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
+
   .info-icon svg {
     width: 24px;
     height: 24px;
-    color: var(--color-accent);
+    color: var(--color-primary);
   }
-  
+
   .contact-form {
     background: var(--color-background);
     padding: 2rem;
     border-radius: 8px;
   }
-  
+
   .form-group {
     margin-bottom: 1.5rem;
   }
-  
+
   .form-group input,
   .form-group textarea {
     width: 100%;
@@ -110,12 +107,12 @@ const { contact } = data;
     border-radius: 4px;
     background: white;
   }
-  
+
   @media (max-width: 768px) {
     .contact-container {
       grid-template-columns: 1fr;
     }
-    
+
     .contact-info {
       padding-right: 0;
     }
