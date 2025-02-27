@@ -1,5 +1,6 @@
 ---
 import data from '../assets/data.json';
+import { Image } from 'astro:assets';
 const { personalInfo } = data;
 ---
 
@@ -16,7 +17,15 @@ const { personalInfo } = data;
         </div>
       </div>
       <div class="hero-image">
-        <img src="/ds.jpg" alt="Foto de perfil" class="profile-image" />
+        <Image 
+          src="/ds.jpg" 
+          alt="Foto de perfil" 
+          width={600} 
+          height={400} 
+          class="profile-image"
+          loading="eager"
+          fetchpriority="high"
+        />
       </div>
     </div>
   </div>

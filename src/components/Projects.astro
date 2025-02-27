@@ -1,4 +1,6 @@
+
 ---
+import { Image } from 'astro:assets';
 import data from '../assets/data.json';
 const { projects } = data;
 ---
@@ -11,7 +13,14 @@ const { projects } = data;
       {projects.map((project) => (
         <div class="project-card">
           <div class="project-image">
-            <img src={`/project/${project.image}.svg`} alt={project.title} class="project-img" />
+            <Image 
+              src={`/project/${project.image}.svg`} 
+              alt={project.title} 
+              width={400} 
+              height={300}
+              class="project-img"
+              loading="lazy"
+            />
           </div>
           <div class="project-details">
             <h3>{project.title}</h3>
@@ -31,7 +40,7 @@ const { projects } = data;
     </div>
 
     <div class="projects-cta">
-      <a href="#" class="btn btn-primary">Ver Más Proyectos</a>
+      <a href="https://github.com/gillopy/Coding_Dojo_DS_ML" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver Más Proyectos</a>
     </div>
   </div>
 </section>

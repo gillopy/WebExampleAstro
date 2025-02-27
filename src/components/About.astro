@@ -1,5 +1,6 @@
 ---
 import data from '../assets/data.json';
+import { Image } from 'astro:assets';
 const { about, personalInfo } = data;
 ---
 
@@ -9,7 +10,14 @@ const { about, personalInfo } = data;
     <div class="about-content">
       <div class="about-image">
         <div class="image-border">
-          <img src="/profile.jpg" alt={personalInfo.name} class="profile-image" />
+          <Image 
+            src="/profile.jpg" 
+            alt={personalInfo.name} 
+            width={400} 
+            height={400} 
+            class="profile-image"
+            loading="lazy"
+          />
         </div>
       </div>
       <div class="about-text">
