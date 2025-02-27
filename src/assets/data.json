@@ -1,18 +1,19 @@
 {
     "personalInfo": {
-        "name": "Guillermo Cabrera",
-        "title": "Economist, Data Scientist, Statistician",
-        "email": "guillermocabrera9710@hotmail.com",
-        "location": "Asunción, Paraguay",
-        "availability": "Completo",
-        "description": "Análisis de datos para la toma de decisiones estratégicas",
-        "cvLink": "#"
-    },
+    "name": "Guillermo Cabrera",
+    "title": "Portfolio de Proyectos y CV",
+    "email": "guillermocabrera9710@hotmail.com",
+    "location": "Asunción, Paraguay",
+    "availability": "Tiempo completo, Remoto",
+    "summary": "“La clave de una buena toma de decisiones es evaluar la información disponible -los datos- y combinarla con tus propias estimaciones de ventajas y desventajas. Como economista, lo hago todos los días..” -Emily Oster, profesora de Economía, Brown University",
+    "cvLink": "https://drive.google.com/file/d/1cq8z85D03Rfh30dshp7ovlro32eu4e_q/view?usp=sharing"
+},
     "about": {
-        "title": "Sobre Mí",
+        "titleabout": "Sobre Mí",
         "description": [
-            "Soy un economista y científico de datos con más de 8 años de experiencia en análisis económico, modelado estadístico y machine learning. Me especializo en el desarrollo de modelos predictivos y en el análisis de datos a gran escala para optimizar la toma de decisiones estratégicas.",
-            "Mi experiencia abarca desde la limpieza y exploración de datos hasta la implementación de soluciones de inteligencia artificial. He trabajado en sectores como mercados financieros, predicción de ventas y análisis de imágenes satelitales para el monitoreo medioambiental."
+        "Profesional con experiencia en análisis de datos y gestión de información para la toma de decisiones estratégicas. Coordinador entre instituciones publicas del gobierno y organizaciones internacionales para la implementación de proyectos de desarrollo económico y social.",
+        "Especializado en modelado estadístico, predicción de tendencias y procesamiento de datos a gran escala. Experiencia en mercados financieros, análisis económico y monitoreo medioambiental con imágenes satelitales.",
+        "Dominio de Python, Pandas, NumPy, visualización avanzada y metodologías de machine learning aplicadas a la optimización de procesos y evaluación de riesgos."
         ],
         "image": "profile.jpg"
     },
@@ -43,10 +44,11 @@
         {
             "title": "Heart Disease Predictions",
             "description": "Desarrollo de un modelo de Machine Learning para predecir precios de propiedades inmobiliarias utilizando datos históricos y variables macroeconómicas.",
+            "details": "Este proyecto se enfoca en la predicción de enfermedades cardíacas utilizando un modelo de XGBoost. Se realizó un análisis exploratorio de datos (EDA) para entender las características más relevantes y se implementó un pipeline de machine learning para preprocesamiento y entrenamiento. El modelo fue desplegado en una aplicación web utilizando Flask.",
             "technologies": ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
             "image": "project1",
             "links": {
-                "demo": "#https://github.com/gillopy/Coding_Dojo_DS_ML/blob/main/2%20-%20Machine_Learning/3%20-%20Boosting/3.3%20-%20XGBOOST%20-%20Clasificaci%C3%B3n%20utilizando%20XGBoost%20(Core)/Clasificaci%C3%B3n%20utilizando%20XGBoost%20(Core).ipynb",
+                "demo": "#",
                 "github": "https://github.com/gillopy/Deployment_XGBoost_Heart_Disease_UCI"
             }
         },

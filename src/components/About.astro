@@ -5,7 +5,7 @@ const { about, personalInfo } = data;
 
 <section id="sobre-mi" class="about">
   <div class="container">
-    <h2 class="section-title">{about.title}</h2>
+    <h2 class="section-title">{about.titleabout}</h2>
     <div class="about-content">
       <div class="about-image">
         <div class="image-border">
@@ -13,7 +13,7 @@ const { about, personalInfo } = data;
         </div>
       </div>
       <div class="about-text">
-        <h3>{personalInfo.title}</h3>
+        
         {about.description.map((paragraph) => (
           <p>{paragraph}</p>
         ))}
@@ -42,7 +42,7 @@ const { about, personalInfo } = data;
 <style>
   .about {
     background-color: #F8FAFC;
-    padding: 4rem 0; /* Agregado padding para mejor espaciado */
+    padding: 5rem 0; /* Agregado padding para mejor espaciado */
   }
 
   .about-content {

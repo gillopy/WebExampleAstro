@@ -22,8 +22,8 @@ const { projects } = data;
               ))}
             </div>
             <div class="project-links">
-              <a href={project.links.demo} class="project-link">Ver Proyecto</a>
-              <a href={project.links.github} class="project-link">Github</a>
+              <a href={`?project=${project.image}#project-details`} class="project-link">Ver Proyecto</a>
+              <a href={project.links.github} class="project-link">GitHub</a>
             </div>
           </div>
         </div>

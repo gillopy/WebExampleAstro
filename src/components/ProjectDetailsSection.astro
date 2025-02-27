@@ -1,0 +1,78 @@
+---
+import data from '../assets/data.json';
+const { projects } = data;
+const { searchParams } = Astro.url;
+const selectedProject = projects.find(p => p.image === searchParams.get('project'));
+---
+
+{selectedProject && (
+  <section id="project-details" class="project-details">
+    <div class="container">
+      <h2 class="section-title">{selectedProject.title}</h2>
+      <div class="project-content">
+        <img src={`/project/${selectedProject.image}.svg`} alt={selectedProject.title} class="project-image" />
+        <p class="project-description">{selectedProject.details}</p>
+        <div class="project-technologies">
+          {selectedProject.technologies.map((tech) => (
+            <span class="technology">{tech}</span>
+          ))}
+        </div>
+        <div class="project-links">
+          <a href={selectedProject.links.github} class="btn btn-primary">Ver en GitHub</a>
+          <a href="#proyectos" class="btn btn-outline">Volver a Proyectos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  /* Styles remain unchanged */
+  .project-details {
+    background-color: #F8FAFC;
+    padding: 5rem 0;
+  }
+
+  .project-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .project-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+  }
+
+  .project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .technology {
+    font-size: 0.8rem;
+    background-color: var(--color-background);
+    color: var(--color-accent);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+</style>
