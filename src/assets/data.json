@@ -18,22 +18,22 @@
     },
     "skills": {
         "technical": [
-            { "name": "Python", "level": 90 },
-            { "name": "R", "level": 85 },
+            { "name": "Python", "level": 95 },
+            { "name": "R", "level": 80 },
             { "name": "SQL", "level": 80 },
-            { "name": "Machine Learning", "level": 85 },
-            { "name": "Deep Learning", "level": 75 },
-            { "name": "Estadística", "level": 90 },
-            { "name": "Econometría", "level": 85 },
-            { "name": "Visualización de Datos", "level": 85 },
-            { "name": "Big Data", "level": 75 }
+            { "name": "Machine Learning", "level": 95 },
+            { "name": "Deep Learning", "level": 90 },
+            { "name": "Estadística", "level": 95 },
+            { "name": "Econometría", "level": 95 },
+            { "name": "Visualización de Datos", "level": 95 },
+            { "name": "Big Data", "level": 90 }
         ],
         "soft": [
-            { "name": "Resolución de Problemas", "level": 90 },
-            { "name": "Pensamiento Analítico", "level": 90 },
-            { "name": "Comunicación", "level": 85 },
-            { "name": "Trabajo en Equipo", "level": 85 },
-            { "name": "Adaptabilidad", "level": 80 }
+            { "name": "Resolución de Problemas", "level": 95 },
+            { "name": "Pensamiento Analítico", "level": 95 },
+            { "name": "Comunicación", "level": 90 },
+            { "name": "Trabajo en Equipo", "level": 80 },
+            { "name": "Adaptabilidad", "level": 90 }
         ],
         "tools": [
             "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy", "XGBoost", "RNN", "CNN", "Docker", "GIT", "Poetry", "Hadoop", "Tableau", "Power BI"
@@ -46,8 +46,8 @@
             "technologies": ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
             "image": "project1",
             "links": {
-                "demo": "#",
-                "github": "#"
+                "demo": "#https://github.com/gillopy/Coding_Dojo_DS_ML/blob/main/2%20-%20Machine_Learning/3%20-%20Boosting/3.3%20-%20XGBOOST%20-%20Clasificaci%C3%B3n%20utilizando%20XGBoost%20(Core)/Clasificaci%C3%B3n%20utilizando%20XGBoost%20(Core).ipynb",
+                "github": "https://github.com/gillopy/Deployment_XGBoost_Heart_Disease_UCI"
             }
         },
         {
