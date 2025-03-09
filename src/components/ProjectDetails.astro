@@ -35,6 +35,52 @@ const { project } = Astro.props;
               ))}
             </div>
 
+            <!-- Mostrar imágenes adicionales -->
+            {project.additionalImages && (
+              <>
+                <h3>Imágenes Adicionales</h3>
+                <div class="additional-images">
+                  {project.additionalImages.map((img) => (
+                    <img
+                      src={`/project/${img}`}
+                      alt={`${project.title} - Imagen adicional`}
+                      class="additional-image"
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+
+            <!-- Mostrar bloques de código -->
+            {project.codeSnippets && (
+              <>
+                <h3>Bloques de Código</h3>
+                <div class="code-snippets">
+                  {project.codeSnippets.map((snippet) => (
+                    <div class="code-snippet">
+                      <h4>{snippet.title}</h4>
+                      <pre><code>{snippet.code}</code></pre>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+
+            <!-- Mostrar enlaces de descarga -->
+            {project.downloadLinks && (
+              <>
+                <h3>Descargas</h3>
+                <div class="download-links">
+                  <a href={project.downloadLinks.pdf} class="btn btn-primary" download>
+                    Descargar PDF
+                  </a>
+                  <a href={project.downloadLinks.ipynb} class="btn btn-outline" download>
+                    Descargar IPython Notebook
+                  </a>
+                </div>
+              </>
+            )}
+
             <div class="project-links">
               <a href={project.links.demo} class="btn btn-primary">Ver Demo</a>
               <a href={project.links.github} class="btn btn-outline">Ver en GitHub</a>
@@ -78,6 +124,55 @@ const { project } = Astro.props;
     font-size: 0.9rem;
   }
 
+  .additional-images {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+  }
+
+  .additional-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .code-snippets {
+    margin: 1rem 0;
+  }
+
+  .code-snippet {
+    background-color: var(--color-background);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .code-snippet h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+  }
+
+  .code-snippet pre {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+
+  .code-snippet code {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--color-text);
+  }
+
+  .download-links {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
   .project-links {
     display: flex;
     gap: 1rem;
@@ -86,6 +181,14 @@ const { project } = Astro.props;
 
   @media (max-width: 768px) {
     .project-details-content {
+      flex-direction: column;
+    }
+
+    .additional-images {
+      flex-direction: column;
+    }
+
+    .download-links {
       flex-direction: column;
     }
   }

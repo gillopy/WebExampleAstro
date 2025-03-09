@@ -40,78 +40,85 @@
       "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy", "XGBoost", "RNN", "CNN", "Docker", "GIT", "Poetry", "Hadoop", "Tableau", "Power BI"
     ]
   },
-  "projects": [
-    {
-      "title": "Heart Disease Predictions",
-      "description": "Desarrollo de un modelo de Machine Learning para predecir enfermedades cardíacas utilizando datos médicos históricos.",
-      "details": "Este proyecto utiliza el algoritmo XGBoost para predecir la probabilidad de enfermedades cardíacas en pacientes. Se realizó un análisis exploratorio de los datos (EDA), limpiado de datos faltantes y optimización del modelo. Además, se implementó un pipeline completo de Machine Learning con Flask para su despliegue en una aplicación web interactiva.",
-      "technologies": ["Python", "Scikit-learn", "Pandas", "Matplotlib", "XGBoost", "Flask"],
-      "image": "project1",
-      "additionalImages": ["project1-extra1.svg", "project1-extra2.svg"],
-      "codeSnippets": [
-        {
-          "title": "Carga de Datos",
-          "code": "import pandas as pd\n\ndata = pd.read_csv('heart.csv')"
+    "projects": [
+      {
+        "title": "Heart Disease Predictions",
+        "description": "Desarrollo de un modelo de Machine Learning para predecir enfermedades cardíacas utilizando datos médicos históricos.",
+        "details": "Este proyecto utiliza el algoritmo XGBoost para predecir la probabilidad de enfermedades cardíacas en pacientes. Se realizó un análisis exploratorio de los datos (EDA), limpieza de datos faltantes y optimización del modelo. Además, se implementó un pipeline completo de Machine Learning con Flask para su despliegue en una aplicación web interactiva.",
+        "technologies": ["Python", "Scikit-learn", "Pandas", "Matplotlib", "XGBoost", "Flask"],
+        "image": "project1",
+        "additionalImages": ["project1-extra4.svg", "project1-extra3.svg"],
+        "codeSnippets": [
+          {
+            "title": "Carga de Datos",
+            "code": "import pandas as pd\n\ndata = pd.read_csv('heart.csv')"
+          },
+          {
+            "title": "Entrenamiento del Modelo",
+            "code": "from xgboost import XGBClassifier\n\nmodel = XGBClassifier()\nmodel.fit(X_train, y_train)"
+          }
+        ],
+        "downloadLinks": {
+          "pdf": "",
+          "ipynb": ""
         },
-        {
-          "title": "Entrenamiento del Modelo",
-          "code": "from xgboost import XGBClassifier\n\nmodel = XGBClassifier()\nmodel.fit(X_train, y_train)"
+        "links": {
+          "demo": "#",
+          "github": "https://github.com/gillopy/Deployment_XGBoost_Heart_Disease_UCI"
         }
-      ],
-      "downloadLinks": {
-        "pdf": "https://example.com/path/to/project1.pdf",
-        "ipynb": "https://example.com/path/to/project1.ipynb"
       },
-      "links": {
-        "demo": "#",
-        "github": "https://github.com/gillopy/Deployment_XGBoost_Heart_Disease_UCI"
+      {
+        "title": "Forecasting Energy Demand ANDE",
+        "description": "Análisis y visualización de la demanda de potencia mensual para la Administración Nacional de Electricidad (ANDE).",
+        "details": "Este proyecto analiza datos históricos de demanda de potencia eléctrica organizados por año y mes. Se aplicaron técnicas de análisis exploratorio de datos (EDA) para identificar tendencias estacionales y variaciones en el consumo. Se generaron visualizaciones interactivas utilizando Seaborn y Matplotlib, destacando los meses con mayor y menor demanda. Además, se implementaron pruebas unitarias con Pytest para garantizar la calidad del código y el manejo adecuado de casos inusuales, como archivos inexistentes o columnas faltantes.",
+        "technologies": ["Python", "Pandas", "Prophet", "Seaborn", "Pytest"],
+        "image": "project7",
+        "additionalImages": ["project1-extra1.svg", "project1-extra2.svg"],
+        "codeSnippets": [
+          {
+            "title": "Carga de Datos",
+            "code": "import pandas as pd\n\ndata = pd.read_csv('energy_demand.csv')"
+          },
+          {
+            "title": "Visualización de la Demanda",
+            "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\nsns.lineplot(x='mes', y='demanda', data=data)\nplt.show()"
+          }
+        ],
+        "downloadLinks": {
+          "pdf": "",
+          "ipynb": ""
+        },
+        "links": {
+          "demo": "#",
+          "github": "https://github.com/gillopy/Ande_Demanda_de_Potencia_Mensual/blob/main/forecasting_prophet.ipynb"
+        }
+      },
+      {
+        "title": "Retail Sales Forecasting",
+        "description": "Desarrollo de modelos de series temporales para estimar la evolución de las ventas minoristas.",
+        "details": "Este proyecto se centra en la predicción de las ventas de productos minoristas en base a datos históricos. Se utilizaron técnicas de regresión y análisis de series temporales para modelar las tendencias de ventas. Se integraron variables macroeconómicas para mejorar la precisión de las predicciones y se empleó Prophet para el modelado.",
+        "technologies": ["Python", "Pandas", "Prophet", "Matplotlib"],
+        "image": "project3",
+        "codeSnippets": [
+          {
+            "title": "Carga de Datos",
+            "code": "import pandas as pd\n\ndata = pd.read_csv('retail_sales.csv')"
+          },
+          {
+            "title": "Entrenamiento de Modelo Prophet",
+            "code": "from prophet import Prophet\n\nmodel = Prophet()\nmodel.fit(data)"
+          }
+        ],
+        "downloadLinks": {
+          "pdf": "",
+          "ipynb": ""
+        },
+        "links": {
+          "demo": "#",
+          "github": "https://github.com/gillopy/Coding_Dojo_DS_ML"
+        }
       }
-    },
-    {
-      "title": "Forecasting Energy Demand ANDE",
-      "description": "Análisis y visualización de la demanda de potencia mensual para la Administración Nacional de Electricidad (ANDE)",
-      "details": "En este proyecto se analizaron datos históricos de demanda de potencia eléctrica, organizados por año y mes. Se aplicaron técnicas de análisis exploratorio de datos (EDA) para identificar tendencias estacionales y variaciones en el consumo. Se generaron visualizaciones interactivas utilizando Seaborn y Matplotlib, destacando los meses con mayor y menor demanda. Además, se implementaron pruebas unitarias con Pytest para garantizar la calidad del código y el manejo adecuado de casos inusuales, como archivos inexistentes o columnas faltantes.",
-      "technologies": ["Python", "Pandas", "Prophet", "Seaborn", "Pytest"],
-      "image": "project7",
-      "links": {
-        "demo": "#",
-        "github": "https://github.com/gillopy/Ande_Demanda_de_Potencia_Mensual/blob/main/forecasting_prophet.ipynb"
-      }
-    },
-    {
-      "title": "Retail Sales Forecasting",
-      "description": "Desarrollo de modelos de series temporales para estimar la evolución del tipo de cambio con respecto al dólar, integrando análisis macroeconómico.",
-      "details": "Este proyecto se centra en la predicción de las ventas de productos minoristas en base a datos históricos. Usando técnicas de regresión y análisis de series temporales, se desarrollaron modelos para predecir las tendencias de ventas a futuro. También se integraron variables macroeconómicas para mejorar la precisión de las predicciones.",
-      "technologies": ["R", "Python", "Statsmodels", "EViews", "Prophet"],
-      "image": "project3",
-      "links": {
-        "demo": "#",
-        "github": "https://github.com/gillopy/Coding_Dojo_DS_ML/tree/main/2%20-%20Machine_Learning/1%20-%20Modelos%20de%20Regresion/1.1%20-%20Regresi%C3%B3n%20-%20Regresi%C3%B3n%201%20(Core)"
-      }
-    },
-    {
-      "title": "Wine Quality PCA",
-      "description": "Desarrollo de un modelo de Machine Learning para predecir la calidad del vino utilizando análisis de componentes principales (PCA).",
-      "details": "Este proyecto aplica técnicas de Machine Learning y PCA para predecir la calidad del vino. Se utilizaron características químicas del vino como variables para el modelo, y mediante PCA se redujo la dimensionalidad de los datos para mejorar la eficiencia del modelo. El modelo final se implementó en una aplicación para usuarios no técnicos.",
-      "technologies": ["Python", "Scikit-learn", "Pandas", "Matplotlib", "PCA", "KNN"],
-      "image": "project4",
-      "links": {
-        "demo": "#",
-        "github": "https://github.com/gillopy/Coding_Dojo_DS_ML/tree/e40b667254a8998b9c61ed88f828419625764f76/2%20-%20Machine_Learning/2%20-%20Modelos%20de%20Clasificacion/2.2-%20Clasificaci%C3%B3n%20b%C3%A1sica%20-%20Predicci%C3%B3n%20de%20Calidad%20del%20Vino%20(Core)"
-      }
-    },
-    {
-      "title": "LGBMClassifier",
-      "description": "Desarrollo de un modelo de clasificación para predecir si un cliente realizará una compra, utilizando técnicas de boosting con LGBMClassifier.",
-      "details": "Este proyecto aplica LGBMClassifier, un algoritmo de boosting, para predecir la probabilidad de compra de clientes basándose en su comportamiento pasado. Se realizaron análisis de los datos para preprocesarlos adecuadamente y optimizar el modelo para obtener las mejores predicciones posibles.",
-      "technologies": ["Python", "Scikit-learn", "Pandas", "Matplotlib", "LGBM", "LightGBM"],
-      "image": "project6",
-      "links": {
-        "demo": "#",
-        "github": "https://github.com/gillopy/Coding_Dojo_DS_ML/tree/e40b667254a8998b9c61ed88f828419625764f76/2%20-%20Machine_Learning/3%20-%20Boosting/3.1%20-%20LGBM%20-%20Clasificaci%C3%B3n%20utilizando%20LightGBM%20(Core)"
-      }
-    }
-  ],
+    ],
   "contact": {
     "title": "Contacto",
     "description": "Estoy disponible para oportunidades laborales y colaboraciones en proyectos de análisis de datos, machine learning y econometría.",

@@ -15,12 +15,24 @@ interface Project {
   links: { demo: string; github: string };
 }
 
-const { projects } = data;
-const selectedProject = projects.find((project: Project) => project.image === Astro.params.project);
+// Función para generar las rutas estáticas
+export async function getStaticPaths() {
+  const { projects } = data;
+
+  return projects.map((project: Project) => ({
+    params: { project: project.image }, // Usa el campo `image` como parámetro de la ruta
+    props: { project }, // Pasa el proyecto como prop
+  }));
+}
+
+// Obtén el proyecto seleccionado basado en el parámetro de la ruta
+const { project } = Astro.props;
 ---
 
 <Layout>
-  {selectedProject && (
-    <ProjectDetails project={selectedProject} />
+  {project ? (
+    <ProjectDetails project={project} />
+  ) : (
+    <p>Proyecto no encontrado.</p>
   )}
 </Layout>
