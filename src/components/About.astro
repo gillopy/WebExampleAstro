@@ -10,18 +10,17 @@ const { about, personalInfo } = data;
     <div class="about-content">
       <div class="about-image">
         <div class="image-border">
-          <Image 
-            src="/profile.jpg" 
-            alt={personalInfo.name} 
-            width={400} 
-            height={400} 
+          <Image
+            src="/profile.jpg"
+            alt={personalInfo.name}
+            width={400}
+            height={400}
             class="profile-image"
             loading="lazy"
           />
         </div>
       </div>
       <div class="about-text">
-        
         {about.description.map((paragraph) => (
           <p>{paragraph}</p>
         ))}
@@ -46,80 +45,3 @@ const { about, personalInfo } = data;
     </div>
   </div>
 </section>
-
-<style>
-  .about {
-    background-color: #F8FAFC;
-    padding: 5rem 0; /* Agregado padding para mejor espaciado */
-  }
-
-  .about-content {
-    display: flex;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .about-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-
-  .image-border {
-    width: 300px;
-    height: 300px;
-    padding: 10px;
-    border: 3px solid var(--color-accent);
-    border-radius: 50%; /* Cambio a borde redondeado para consistencia */
-    position: relative;
-    overflow: hidden; /* Asegura que la imagen no sobresalga */
-  }
-
-  .profile-image {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%; /* Consistencia con el borde */
-    object-fit: cover;
-  }
-
-  .about-text {
-    flex: 2;
-  }
-
-  .about-text h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--color-primary);
-  }
-
-  .about-details {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin: 1.5rem 0;
-  }
-
-  .detail {
-    font-size: 0.95rem;
-  }
-
-  .detail strong {
-    color: var(--color-primary);
-    margin-right: 0.5rem;
-  }
-
-  .about-buttons {
-    margin-top: 1.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .about-content {
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .about-details {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
