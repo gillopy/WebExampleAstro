@@ -154,7 +154,9 @@ img {
 }
 .btn-primary:hover {
   background-color: var(--color-accent-light);
+  color: #fff; /* O usa var(--color-text) si tienes una variable definida */
 }
+
 .btn-outline {
   background-color: transparent;
   color: var(--color-accent);
