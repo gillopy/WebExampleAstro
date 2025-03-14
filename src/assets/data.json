@@ -1,19 +1,19 @@
 {
   "personalInfo": {
     "name": "Guillermo Cabrera",
-    "title": "Portfolio de Proyectos y CV",
+    "title": "Data Scientist & Consultor en Análisis de Datos",
     "email": "guillermocabrera9710@hotmail.com",
     "location": "Asunción, Paraguay",
     "availability": "Tiempo completo, Remoto",
-    "summary": "“La clave de una buena toma de decisiones es evaluar la información disponible -los datos- y combinarla con tus propias estimaciones de ventajas y desventajas. Como economista, lo hago todos los días..” -Emily Oster, profesora de Economía, Brown University",
+    "summary": "Impulsa tus decisiones empresariales con soluciones basadas en machine learning, estadística avanzada y modelos predictivos.",
     "cvLink": "https://drive.google.com/file/d/1cq8z85D03Rfh30dshp7ovlro32eu4e_q/view?usp=sharing"
   },
   "about": {
     "titleabout": "Sobre Mí",
     "description": [
-      "Profesional con experiencia en análisis de datos y gestión de información para la toma de decisiones estratégicas. Coordinador entre instituciones publicas del gobierno y organizaciones internacionales para la implementación de proyectos de desarrollo económico y social.",
-      "Especializado en modelado estadístico, predicción de tendencias y procesamiento de datos a gran escala. Experiencia en mercados financieros, análisis económico y monitoreo medioambiental con imágenes satelitales.",
-      "Dominio de Python, Pandas, NumPy, visualización avanzada y metodologías de machine learning aplicadas a la optimización de procesos y evaluación de riesgos."
+      "Soy un Data Scientist con amplia experiencia en análisis de datos y modelado estadístico, colaborando con instituciones públicas e internacionales para desarrollar soluciones escalables que optimizan procesos y maximizan resultados.",
+      "Mi enfoque estratégico y orientado a resultados combina una sólida formación en economía con competencias avanzadas en machine learning, análisis predictivo y visualización de datos. Esto me permite transformar datos complejos en insights accionables que impulsan la toma de decisiones fundamentadas.",
+      "Comprometido con la innovación, trabajo en estrecha colaboración con equipos multidisciplinarios para diseñar estrategias que incrementan la eficiencia, reducen riesgos y generan valor sostenible para las organizaciones."
     ],
     "image": "profile.jpg"
   },
@@ -37,91 +37,128 @@
       { "name": "Adaptabilidad", "level": 90 }
     ],
     "tools": [
-      "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy", "XGBoost", "RNN", "CNN", "Docker", "GIT", "Poetry", "Hadoop", "Tableau", "Power BI"
+      "TensorFlow",
+      "PyTorch",
+      "Scikit-learn",
+      "Pandas",
+      "NumPy",
+      "XGBoost",
+      "RNN",
+      "CNN",
+      "Docker",
+      "GIT",
+      "Poetry",
+      "Hadoop",
+      "Tableau",
+      "Power BI"
     ]
   },
-    "projects": [
-      {
-        "title": "Heart Disease Predictions",
-        "description": "Desarrollo de un modelo de Machine Learning para predecir enfermedades cardíacas utilizando datos médicos históricos.",
-        "details": "Este proyecto utiliza el algoritmo XGBoost para predecir la probabilidad de enfermedades cardíacas en pacientes. Se realizó un análisis exploratorio de los datos (EDA), limpieza de datos faltantes y optimización del modelo. Además, se implementó un pipeline completo de Machine Learning con Flask para su despliegue en una aplicación web interactiva.",
-        "technologies": ["Python", "Scikit-learn", "Pandas", "Matplotlib", "XGBoost", "Flask"],
-        "image": "project1",
-        "additionalImages": ["project1-extra4.svg", "project1-extra3.svg"],
-        "codeSnippets": [
-          {
-            "title": "Carga de Datos",
-            "code": "import pandas as pd\n\ndata = pd.read_csv('heart.csv')"
-          },
-          {
-            "title": "Entrenamiento del Modelo",
-            "code": "from xgboost import XGBClassifier\n\nmodel = XGBClassifier()\nmodel.fit(X_train, y_train)"
-          }
-        ],
-        "downloadLinks": {
-          "pdf": "",
-          "ipynb": ""
+  "projects": [
+    {
+      "title": "Heart Disease Predictions",
+      "description": "Desarrollo de un modelo de Machine Learning para predecir enfermedades cardíacas utilizando datos médicos históricos.",
+      "details": "Este proyecto utiliza el algoritmo XGBoost para predecir la probabilidad de enfermedades cardíacas en pacientes. Se realizó un análisis exploratorio de los datos (EDA), limpieza de datos faltantes y optimización del modelo. Además, se implementó un pipeline completo de Machine Learning con Flask para su despliegue en una aplicación web interactiva.",
+      "technologies": [
+        "Python",
+        "Scikit-learn",
+        "Pandas",
+        "Matplotlib",
+        "XGBoost",
+        "Flask"
+      ],
+      "image": "project1",
+      "additionalImages": [
+        "project1-extra4.svg",
+        "project1-extra3.svg"
+      ],
+      "codeSnippets": [
+        {
+          "title": "Carga de Datos",
+          "code": "import pandas as pd\n\ndata = pd.read_csv('heart.csv')"
         },
-        "links": {
-          "demo": "#",
-          "github": "https://github.com/gillopy/Deployment_XGBoost_Heart_Disease_UCI"
+        {
+          "title": "Entrenamiento del Modelo",
+          "code": "from xgboost import XGBClassifier\n\nmodel = XGBClassifier()\nmodel.fit(X_train, y_train)"
         }
+      ],
+      "downloadLinks": {
+        "pdf": "https://github.com/gillopy/Deployment_XGBoost_Heart_Disease_UCI",
+        "ipynb": "https://github.com/gillopy/Deployment_XGBoost_Heart_Disease_UCI"
       },
-      {
-        "title": "Forecasting Energy Demand ANDE",
-        "description": "Análisis y visualización de la demanda de potencia mensual para la Administración Nacional de Electricidad (ANDE).",
-        "details": "Este proyecto analiza datos históricos de demanda de potencia eléctrica organizados por año y mes. Se aplicaron técnicas de análisis exploratorio de datos (EDA) para identificar tendencias estacionales y variaciones en el consumo. Se generaron visualizaciones interactivas utilizando Seaborn y Matplotlib, destacando los meses con mayor y menor demanda. Además, se implementaron pruebas unitarias con Pytest para garantizar la calidad del código y el manejo adecuado de casos inusuales, como archivos inexistentes o columnas faltantes.",
-        "technologies": ["Python", "Pandas", "Prophet", "Seaborn", "Pytest"],
-        "image": "project7",
-        "additionalImages": ["project1-extra1.svg", "project1-extra2.svg"],
-        "codeSnippets": [
-          {
-            "title": "Carga de Datos",
-            "code": "import pandas as pd\n\ndata = pd.read_csv('energy_demand.csv')"
-          },
-          {
-            "title": "Visualización de la Demanda",
-            "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\nsns.lineplot(x='mes', y='demanda', data=data)\nplt.show()"
-          }
-        ],
-        "downloadLinks": {
-          "pdf": "",
-          "ipynb": ""
-        },
-        "links": {
-          "demo": "#",
-          "github": "https://github.com/gillopy/Ande_Demanda_de_Potencia_Mensual/blob/main/forecasting_prophet.ipynb"
-        }
-      },
-      {
-        "title": "Retail Sales Forecasting",
-        "description": "Desarrollo de modelos de series temporales para estimar la evolución de las ventas minoristas.",
-        "details": "Este proyecto se centra en la predicción de las ventas de productos minoristas en base a datos históricos. Se utilizaron técnicas de regresión y análisis de series temporales para modelar las tendencias de ventas. Se integraron variables macroeconómicas para mejorar la precisión de las predicciones y se empleó Prophet para el modelado.",
-        "technologies": ["Python", "Pandas", "Prophet", "Matplotlib"],
-        "image": "project3",
-        "codeSnippets": [
-          {
-            "title": "Carga de Datos",
-            "code": "import pandas as pd\n\ndata = pd.read_csv('retail_sales.csv')"
-          },
-          {
-            "title": "Entrenamiento de Modelo Prophet",
-            "code": "from prophet import Prophet\n\nmodel = Prophet()\nmodel.fit(data)"
-          }
-        ],
-        "downloadLinks": {
-          "pdf": "",
-          "ipynb": ""
-        },
-        "links": {
-          "demo": "#",
-          "github": "https://github.com/gillopy/Coding_Dojo_DS_ML"
-        }
+      "links": {
+        "demo": "https://github.com/gillopy/Deployment_XGBoost_Heart_Disease_UCI",
+        "github": "https://github.com/gillopy/Deployment_XGBoost_Heart_Disease_UCI"
       }
-    ],
+    },
+    {
+      "title": "Forecasting Energy Demand ANDE",
+      "description": "Análisis y visualización de la demanda de potencia mensual para la Administración Nacional de Electricidad (ANDE).",
+      "details": "Este proyecto analiza datos históricos de demanda de potencia eléctrica organizados por año y mes. Se aplicaron técnicas de análisis exploratorio de datos (EDA) para identificar tendencias estacionales y variaciones en el consumo. Se generaron visualizaciones interactivas utilizando Seaborn y Matplotlib, destacando los meses con mayor y menor demanda. Además, se implementaron pruebas unitarias con Pytest para garantizar la calidad del código y el manejo adecuado de casos inusuales, como archivos inexistentes o columnas faltantes.",
+      "technologies": [
+        "Python",
+        "Pandas",
+        "Prophet",
+        "Seaborn",
+        "Pytest"
+      ],
+      "image": "project7",
+      "additionalImages": [
+        "project1-extra1.svg",
+        "project1-extra2.svg"
+      ],
+      "codeSnippets": [
+        {
+          "title": "Carga de Datos",
+          "code": "import pandas as pd\n\ndata = pd.read_csv('energy_demand.csv')"
+        },
+        {
+          "title": "Visualización de la Demanda",
+          "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\nsns.lineplot(x='mes', y='demanda', data=data)\nplt.show()"
+        }
+      ],
+      "downloadLinks": {
+        "pdf": "https://github.com/gillopy/Ande_Demanda_de_Potencia_Mensual/blob/main/forecasting_prophet.ipynb",
+        "ipynb": "https://github.com/gillopy/Ande_Demanda_de_Potencia_Mensual/blob/main/forecasting_prophet.ipynb"
+      },
+      "links": {
+        "demo": "https://github.com/gillopy/Ande_Demanda_de_Potencia_Mensual/blob/main/forecasting_prophet.ipynb",
+        "github": "https://github.com/gillopy/Ande_Demanda_de_Potencia_Mensual/blob/main/forecasting_prophet.ipynb"
+      }
+    },
+    {
+      "title": "Retail Sales Forecasting",
+      "description": "Desarrollo de modelos de series temporales para estimar la evolución de las ventas minoristas.",
+      "details": "Este proyecto se centra en la predicción de las ventas de productos minoristas en base a datos históricos. Se utilizaron técnicas de regresión y análisis de series temporales para modelar las tendencias de ventas. Se integraron variables macroeconómicas para mejorar la precisión de las predicciones y se empleó Prophet para el modelado.",
+      "technologies": [
+        "Python",
+        "Pandas",
+        "Prophet",
+        "Matplotlib"
+      ],
+      "image": "project3",
+      "codeSnippets": [
+        {
+          "title": "Carga de Datos",
+          "code": "import pandas as pd\n\ndata = pd.read_csv('retail_sales.csv')"
+        },
+        {
+          "title": "Entrenamiento de Modelo Prophet",
+          "code": "from prophet import Prophet\n\nmodel = Prophet()\nmodel.fit(data)"
+        }
+      ],
+      "downloadLinks": {
+        "pdf": "https://github.com/gillopy/Coding_Dojo_DS_ML",
+        "ipynb": "https://github.com/gillopy/Coding_Dojo_DS_ML"
+      },
+      "links": {
+        "demo": "https://github.com/gillopy/Coding_Dojo_DS_ML",
+        "github": "https://github.com/gillopy/Coding_Dojo_DS_ML"
+      }
+    }
+  ],
   "contact": {
     "title": "Contacto",
-    "description": "Estoy disponible para oportunidades laborales y colaboraciones en proyectos de análisis de datos, machine learning y econometría.",
+    "description": "¿Listo para transformar tus datos en resultados concretos? Conéctate conmigo para explorar colaboraciones, consultorías y oportunidades en análisis avanzado, machine learning y estrategias de datos.",
     "email": "guillermocabrera9710@hotmail.com",
     "location": "Asunción, Paraguay"
   }

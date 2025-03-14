@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ProjectDetails from './ProjectDetails.astro';
 import data from '../assets/data.json';
+import { Image } from 'astro:assets';
 
 interface Project {
   title: string;
@@ -27,11 +28,14 @@ const { projects } = data;
         {projects.map((project: Project) => (
           <div class="project-card">
             <div class="project-image">
-              <img
+              <Image
                 src={`/project/${project.image}.svg`}
                 alt={project.title}
+                width={600}
+                height={400}
                 class="project-img"
-                loading="lazy"
+                loading="lazy" 
+                decoding="async"
               />
             </div>
             <div class="project-details">

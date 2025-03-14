@@ -6,6 +6,10 @@ const { project } = Astro.props;
 ---
 
 <section id="project-details" class="project-details">
+             <!-- Botón para redirigir hacia atrás -->
+             <div class="back-button">
+              <a href="javascript:history.back()" class="btn btn-secondary">Atrás</a>
+            </div>
   <div class="container">
     {project ? (
       <>
@@ -41,10 +45,13 @@ const { project } = Astro.props;
                 <h3>Imágenes Adicionales</h3>
                 <div class="additional-images">
                   {project.additionalImages.map((img) => (
-                    <img
+                    <Image
                       src={`/project/${img}`}
                       alt={`${project.title} - Imagen adicional`}
                       class="additional-image"
+                      width={600}
+                      height={400}
+                      loading="lazy"
                     />
                   ))}
                 </div>
@@ -85,6 +92,8 @@ const { project } = Astro.props;
               <a href={project.links.demo} class="btn btn-primary">Ver Demo</a>
               <a href={project.links.github} class="btn btn-outline">Ver en GitHub</a>
             </div>
+
+ 
           </div>
         </div>
       </>
