@@ -1,0 +1,47 @@
+---
+import data from '../assets/data.json';
+import { Image } from 'astro:assets';
+const { about, personalInfo } = data;
+---
+
+<section id="sobre-mi" class="about">
+  <div class="container">
+    <h2 class="section-title">{about.titleabout}</h2>
+    <div class="about-content">
+      <div class="about-image">
+        <div class="image-border">
+          <Image
+            src="/profile.jpg"
+            alt={personalInfo.name}
+            width={400}
+            height={400}
+            class="profile-image"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <div class="about-text">
+        {about.description.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
+        <div class="about-details">
+          <div class="detail">
+            <strong>Nombre:</strong> {personalInfo.name}
+          </div>
+          <div class="detail">
+            <strong>Email:</strong> {personalInfo.email}
+          </div>
+          <div class="detail">
+            <strong>Ubicación:</strong> {personalInfo.location}
+          </div>
+          <div class="detail">
+            <strong>Disponibilidad:</strong> {personalInfo.availability}
+          </div>
+        </div>
+        <div class="about-buttons">
+          <a href={personalInfo.cvLink} class="btn btn-primary">Descargar CV</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

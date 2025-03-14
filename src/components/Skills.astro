@@ -1,0 +1,55 @@
+---
+import data from '../assets/data.json';
+const { skills } = data;
+---
+
+<section id="habilidades" class="skills">
+  <div class="container">
+    <h2 class="section-title">Habilidades</h2>
+
+    <div class="skills-container">
+      <div class="skills-column">
+        <h3>Habilidades Técnicas</h3>
+        <div class="skills-list">
+          {skills.technical.map((skill) => (
+            <div class="skill">
+              <div class="skill-info">
+                <span class="skill-name">{skill.name}</span>
+                <span class="skill-percentage">{skill.level}%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-level" style={`width: ${skill.level}%`}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="skills-column">
+        <h3>Habilidades Personales</h3>
+        <div class="skills-list">
+          {skills.soft.map((skill) => (
+            <div class="skill">
+              <div class="skill-info">
+                <span class="skill-name">{skill.name}</span>
+                <span class="skill-percentage">{skill.level}%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-level soft" style={`width: ${skill.level}%`}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="tools-container">
+          <h3>Herramientas y Tecnologías</h3>
+          <div class="tools-grid">
+            {skills.tools.map((tool) => (
+              <div class="tool">{tool}</div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,163 @@
+{
+  "personalInfo": {
+    "name": "Guillermo Cabrera",
+    "title": "Portfolio de Proyectos y CV",
+    "email": "guillermocabrera9710@hotmail.com",
+    "location": "Asunción, Paraguay",
+    "availability": "Tiempo completo, Remoto",
+    "summary": "Economista especializado en análisis cuantitativo, modelación econométrica y ciencia de datos, con un fuerte enfoque en la transformación digital. Experto en integrar soluciones tecnológicas avanzadas y algoritmos de machine learning para desarrollar estrategias corporativas y políticas públicas fundamentadas en evidencia empírica.",
+    "cvLink": "https://drive.google.com/file/d/1cq8z85D03Rfh30dshp7ovlro32eu4e_q/view?usp=sharing"
+  },
+  "about": {
+    "titleabout": "Sobre Mí",
+    "description": [
+      "Con una formación integral en economía y ciencia de datos, me especializo en transformar información compleja en insights estratégicos que potencian la toma de decisiones efectivas.",
+      "He colaborado con diversas organizaciones para implementar soluciones basadas en inteligencia analítica, mejorando procesos y maximizando la competitividad en el mercado.",
+      "Mi enfoque profesional combina rigor cuantitativo y creatividad, orientado a impulsar la innovación y la transformación digital en entornos corporativos y de políticas públicas."
+    ],
+    "image": "profile.jpg"
+  },
+    "skills": {
+      "technical": [
+        { "name": "Estadística", "level": 95 },
+        { "name": "Econometría", "level": 90 },
+        { "name": "Macroeconomia", "level": 80 },
+        { "name": "Machine Learning", "level": 95 },
+        { "name": "Deep Learning", "level": 95 }
+      ],
+      "soft": [
+        { "name": "Resolución de Problemas", "level": 95 },
+        { "name": "Pensamiento Analítico", "level": 95 },
+        { "name": "Comunicación", "level": 80 },
+        { "name": "Trabajo en Equipo", "level": 90 },
+        { "name": "Adaptabilidad", "level": 90 }
+      ],
+      "tools": [
+        "TensorFlow",
+        "PyTorch",
+        "Scikit-learn",
+        "Statsforecast",
+        "Keras",
+        "XGBoost",
+        "Statsmodels",
+        "Prophet",
+        "RNN",
+        "Docker",
+        "Github",
+        "Poetry",
+        "UV",
+        "Xarray",
+        "Geopandas",
+        "Matplotlib"
+      ]
+    },
+  "projects": [
+    {
+      "title": "Heart Disease Predictions",
+      "description": "Desarrollo de un modelo de Machine Learning para predecir enfermedades cardíacas utilizando datos médicos históricos.",
+      "details": "Este proyecto utiliza el algoritmo XGBoost para predecir la probabilidad de enfermedades cardíacas en pacientes. Se realizó un análisis exploratorio de los datos (EDA), limpieza de datos faltantes y optimización del modelo. Además, se implementó un pipeline completo de Machine Learning con Flask para su despliegue en una aplicación web interactiva.",
+      "technologies": [
+        "Python",
+        "Scikit-learn",
+        "Pandas",
+        "Matplotlib",
+        "XGBoost",
+        "Flask"
+      ],
+      "image": "project1",
+      "additionalImages": [
+        "project1-extra4.svg",
+        "project1-extra3.svg"
+      ],
+      "codeSnippets": [
+        {
+          "title": "Carga de Datos",
+          "code": "import pandas as pd\n\ndata = pd.read_csv('heart.csv')"
+        },
+        {
+          "title": "Entrenamiento del Modelo",
+          "code": "from xgboost import XGBClassifier\n\nmodel = XGBClassifier()\nmodel.fit(X_train, y_train)"
+        }
+      ],
+      "downloadLinks": {
+        "pdf": "https://github.com/gillopy/Deployment_XGBoost_Heart_Disease_UCI",
+        "ipynb": "https://github.com/gillopy/Deployment_XGBoost_Heart_Disease_UCI"
+      },
+      "links": {
+        "demo": "https://github.com/gillopy/Deployment_XGBoost_Heart_Disease_UCI",
+        "github": "https://github.com/gillopy/Deployment_XGBoost_Heart_Disease_UCI"
+      }
+    },
+    {
+      "title": "Forecasting Energy Demand ANDE",
+      "description": "Análisis y visualización de la demanda de potencia mensual para la Administración Nacional de Electricidad (ANDE).",
+      "details": "Este proyecto analiza datos históricos de demanda de potencia eléctrica organizados por año y mes. Se aplicaron técnicas de análisis exploratorio de datos (EDA) para identificar tendencias estacionales y variaciones en el consumo. Se generaron visualizaciones interactivas utilizando Seaborn y Matplotlib, destacando los meses con mayor y menor demanda. Además, se implementaron pruebas unitarias con Pytest para garantizar la calidad del código y el manejo adecuado de casos inusuales, como archivos inexistentes o columnas faltantes.",
+      "technologies": [
+        "Python",
+        "Pandas",
+        "Prophet",
+        "Seaborn",
+        "Pytest"
+      ],
+      "image": "project7",
+      "additionalImages": [
+        "project1-extra1.svg",
+        "project1-extra2.svg"
+      ],
+      "codeSnippets": [
+        {
+          "title": "Carga de Datos",
+          "code": "import pandas as pd\n\ndata = pd.read_csv('energy_demand.csv')"
+        },
+        {
+          "title": "Visualización de la Demanda",
+          "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\nsns.lineplot(x='mes', y='demanda', data=data)\nplt.show()"
+        }
+      ],
+      "downloadLinks": {
+        "pdf": "https://github.com/gillopy/Ande_Demanda_de_Potencia_Mensual/blob/main/forecasting_prophet.ipynb",
+        "ipynb": "https://github.com/gillopy/Ande_Demanda_de_Potencia_Mensual/blob/main/forecasting_prophet.ipynb"
+      },
+      "links": {
+        "demo": "https://github.com/gillopy/Ande_Demanda_de_Potencia_Mensual/blob/main/forecasting_prophet.ipynb",
+        "github": "https://github.com/gillopy/Ande_Demanda_de_Potencia_Mensual/blob/main/forecasting_prophet.ipynb"
+      }
+    },
+    {
+      "title": "Retail Sales Forecasting",
+      "description": "Desarrollo de modelos de series temporales para estimar la evolución de las ventas minoristas.",
+      "details": "Este proyecto se centra en la predicción de las ventas de productos minoristas en base a datos históricos. Se utilizaron técnicas de regresión y análisis de series temporales para modelar las tendencias de ventas. Se integraron variables macroeconómicas para mejorar la precisión de las predicciones y se empleó Prophet para el modelado.",
+      "technologies": [
+        "Python",
+        "Pandas",
+        "Prophet",
+        "Matplotlib"
+      ],
+      "image": "project3",
+      "codeSnippets": [
+        {
+          "title": "Carga de Datos",
+          "code": "import pandas as pd\n\ndata = pd.read_csv('retail_sales.csv')"
+        },
+        {
+          "title": "Entrenamiento de Modelo Prophet",
+          "code": "from prophet import Prophet\n\nmodel = Prophet()\nmodel.fit(data)"
+        }
+      ],
+      "downloadLinks": {
+        "pdf": "https://github.com/gillopy/Coding_Dojo_DS_ML",
+        "ipynb": "https://github.com/gillopy/Coding_Dojo_DS_ML"
+      },
+      "links": {
+        "demo": "https://github.com/gillopy/Coding_Dojo_DS_ML",
+        "github": "https://github.com/gillopy/Coding_Dojo_DS_ML"
+      }
+    }
+  ],
+  "contact": {
+    "title": "Contacto",
+    "description": "Estoy disponible para consultas y colaboraciones en análisis de datos, machine learning y estrategias de datos. Puedes contactarme a través del correo electrónico.",
+    "email": "guillermocabrera9710@hotmail.com",
+    "location": "Asunción, Paraguay"
+  }
+}

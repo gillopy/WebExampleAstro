@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProjectDetails from '../../components/ProjectDetails.astro';
+import data from '../../assets/data.json';
+
+interface Project {
+  title: string;
+  description: string;
+  details: string;
+  technologies: string[];
+  image: string;
+  additionalImages?: string[];
+  codeSnippets?: { title: string; code: string }[];
+  downloadLinks?: { pdf: string; ipynb: string };
+  links: { demo: string; github: string };
+}
+
+// Función para generar las rutas estáticas
+export async function getStaticPaths() {
+  const { projects } = data;
+
+  return projects.map((project: Project) => ({
+    params: { project: project.image }, // Usa el campo `image` como parámetro de la ruta
+    props: { project }, // Pasa el proyecto como prop
+  }));
+}
+
+// Obtén el proyecto seleccionado basado en el parámetro de la ruta
+const { project } = Astro.props;
+---
+
+<Layout>
+  {project ? (
+    <ProjectDetails project={project} />
+  ) : (
+    <p>Proyecto no encontrado.</p>
+  )}
+</Layout>

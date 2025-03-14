@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectDetails from './ProjectDetails.astro';
+import data from '../assets/data.json';
+import { Image } from 'astro:assets';
+
+interface Project {
+  title: string;
+  description: string;
+  details: string;
+  technologies: string[];
+  image: string;
+  links: {
+    demo: string;
+    github: string;
+  };
+}
+
+const { projects } = data;
+---
+
+<Layout>
+  <section id="proyectos" class="projects">
+    <div class="container">
+      <h2 class="section-title">Proyectos</h2>
+
+      <div class="projects-grid">
+        {projects.map((project: Project) => (
+          <div class="project-card">
+            <div class="project-image">
+              <Image
+                src={`/project/${project.image}.svg`}
+                alt={project.title}
+                width={600}
+                height={400}
+                class="project-img"
+                loading="lazy" 
+                decoding="async"
+              />
+            </div>
+            <div class="project-details">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <div class="project-technologies">
+                {project.technologies.map((tech: string) => (
+                  <span class="technology">{tech}</span>
+                ))}
+              </div>
+              <div class="project-links">
+                <a 
+                  href={`/project/${project.image}`} 
+                  class="btn btn-primary"
+                >
+                  Ver Proyecto
+                </a>
+                <a 
+                  href={project.links.github} 
+                  class="btn btn-outline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

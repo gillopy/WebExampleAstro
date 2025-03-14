@@ -1,0 +1,32 @@
+---
+import data from '../assets/data.json';
+import { Image } from 'astro:assets';
+const { personalInfo } = data;
+---
+
+<section id="inicio" class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>{personalInfo.name}</h1>
+        <h2>{personalInfo.title}</h2>
+        <p>{personalInfo.summary}</p>
+        <div class="hero-btns">
+          <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+          <a href="#contacto" class="btn btn-outline">Contacto</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <Image 
+          src="/ds.jpg" 
+          alt="Foto de perfil" 
+          width={600} 
+          height={400} 
+          class="profile-image"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+  </div>
+</section>
