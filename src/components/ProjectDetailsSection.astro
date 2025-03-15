@@ -10,7 +10,7 @@ const selectedProject = projects.find(p => p.image === searchParams.get('project
     <div class="container">
       <h2 class="section-title">{selectedProject.title}</h2>
       <div class="project-content">
-        <img src={`/project/${selectedProject.image}.svg`} alt={selectedProject.title} class="project-image" />
+        <img src={`/project/${selectedProject.image}.j`} alt={selectedProject.title} class="project-image" />
         <p class="project-description">{selectedProject.details}</p>
         <div class="project-technologies">
           {selectedProject.technologies.map((tech) => (

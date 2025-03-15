@@ -1,11 +1,11 @@
 {
   "personalInfo": {
     "name": "Guillermo Cabrera",
-    "title": "Portfolio de Proyectos y CV",
+    "title": "Economista, Estadístico y Científico de Datos",
     "email": "guillermocabrera9710@hotmail.com",
     "location": "Asunción, Paraguay",
     "availability": "Tiempo completo, Remoto",
-    "summary": "Economista especializado en análisis cuantitativo, modelación econométrica y ciencia de datos, con un fuerte enfoque en la transformación digital. Experto en integrar soluciones tecnológicas avanzadas y algoritmos de machine learning para desarrollar estrategias corporativas y políticas públicas fundamentadas en evidencia empírica.",
+    "summary": "Manejo de modelos de aprendizaje profundo para forecasting, analisis de series temporales y clasificacion de datos. Conocimientos avanzados en econometria, estadistica descriptiva e inferencial. Facilidad en estructurar y desplegar modelos de machine learning en entornos de producción.",
     "cvLink": "https://drive.google.com/file/d/1cq8z85D03Rfh30dshp7ovlro32eu4e_q/view?usp=sharing"
   },
   "about": {
@@ -51,32 +51,45 @@
         "Matplotlib"
       ]
     },
-  "projects": [
+"projects": [
     {
-      "title": "Heart Disease Predictions",
-      "description": "Desarrollo de un modelo de Machine Learning para predecir enfermedades cardíacas utilizando datos médicos históricos.",
-      "details": "Este proyecto utiliza el algoritmo XGBoost para predecir la probabilidad de enfermedades cardíacas en pacientes. Se realizó un análisis exploratorio de los datos (EDA), limpieza de datos faltantes y optimización del modelo. Además, se implementó un pipeline completo de Machine Learning con Flask para su despliegue en una aplicación web interactiva.",
+      "title": "Sistema de Predicción de Enfermedades Cardíacas",
+      "description": "Pipeline completo de machine learning para predecir riesgo cardíaco usando XGBoost, con despliegue en Docker y versionado de modelos",
+      "details": "Implementación completa de machine learning con procesamiento robusto de datos y gestión de modelos. Características principales:\n- Pipeline automatizado de datos que maneja valores faltantes y escalado de características\n- División estratificada de datos con balanceo de clases\n- Seguimiento de rendimiento del modelo (Precisión, Recall, AUC-ROC)\n- Despliegue Dockerizado con gestión de dependencias Poetry\n- Versionado automático de modelos con serialización timestamp\n- Métricas de evaluación comprehensivas y reproductibilidad",
       "technologies": [
-        "Python",
+        "Python 3.10",
+        "XGBoost",
         "Scikit-learn",
         "Pandas",
-        "Matplotlib",
-        "XGBoost",
-        "Flask"
+        "Joblib",
+        "Docker",
+        "Poetry"
       ],
       "image": "project1",
-      "additionalImages": [
-        "project1-extra4.svg",
-        "project1-extra3.svg"
-      ],
       "codeSnippets": [
         {
-          "title": "Carga de Datos",
-          "code": "import pandas as pd\n\ndata = pd.read_csv('heart.csv')"
+          "title": "Preprocesamiento de Datos",
+          "code": "def process_data(df: pd.DataFrame, columns_to_impute: list):\n    # Handle missing values and prepare features\n    df[columns_to_impute] = df[columns_to_impute].replace(0, np.nan)\n    return df.drop(columns='num'), df['num']",
+          "image": "project1-extra1.jpg"
         },
         {
-          "title": "Entrenamiento del Modelo",
-          "code": "from xgboost import XGBClassifier\n\nmodel = XGBClassifier()\nmodel.fit(X_train, y_train)"
+          "title": "División Estratificada de Datos",
+          "code": "X_train, X_test, y_train, y_test = train_test_split(\n    X, y, \n    test_size=0.2, \n    stratify=y,\n    random_state=42\n)",
+          "image": "project1-extra2.jpg"
+        },
+        {
+          "title": "Entrenamiento del Modelo XGBoost",
+          "code": "model = XGBClassifier(\n    objective='binary:logistic',\n    max_depth=2,\n    n_estimators=300,\n    learning_rate=0.1\n)\nmodel.fit(X_train, y_train)",
+          "image": "project1-extra3.jpg"
+        },
+        {
+          "title": "Evaluación del Modelo",
+          "code": "y_pred = model.predict(X_test)\ny_proba = model.predict_proba(X_test)[:, 1]\nprint(f'AUC: {roc_auc_score(y_test, y_proba):.2f}')",
+          "image": "project1-extra4.jpg"
+        },
+        {
+          "title": "Versionado de Modelos",
+          "code": "def save_model(model, path):\n    timestamp = datetime.now().strftime('%Y-%m-%d')\n    joblib.dump(model, f'{path}_{timestamp}.joblib')"
         }
       ],
       "downloadLinks": {
@@ -89,68 +102,96 @@
       }
     },
     {
-      "title": "Forecasting Energy Demand ANDE",
-      "description": "Análisis y visualización de la demanda de potencia mensual para la Administración Nacional de Electricidad (ANDE).",
-      "details": "Este proyecto analiza datos históricos de demanda de potencia eléctrica organizados por año y mes. Se aplicaron técnicas de análisis exploratorio de datos (EDA) para identificar tendencias estacionales y variaciones en el consumo. Se generaron visualizaciones interactivas utilizando Seaborn y Matplotlib, destacando los meses con mayor y menor demanda. Además, se implementaron pruebas unitarias con Pytest para garantizar la calidad del código y el manejo adecuado de casos inusuales, como archivos inexistentes o columnas faltantes.",
+      "title": "Análisis de Demanda Eléctrica ANDE",
+      "description": "Sistema de visualización y análisis de patrones de consumo eléctrico con comparativas históricas",
+      "details": "Plataforma completa para análisis energético con:\n- Carga automatizada de datos desde Excel\n- Procesamiento estadístico de series temporales\n- Visualizaciones interactivas con marcadores estacionales\n- Sistema de pruebas automatizadas\n- Gestión de dependencias con uv\n- Generación de reportes gráficos profesionales",
       "technologies": [
-        "Python",
+        "Python 3.13",
         "Pandas",
-        "Prophet",
+        "Matplotlib",
         "Seaborn",
-        "Pytest"
+        "Openpyxl",
+        "Pytest",
+        "uv"
       ],
-      "image": "project7",
-      "additionalImages": [
-        "project1-extra1.svg",
-        "project1-extra2.svg"
-      ],
+      "image": "project2",
       "codeSnippets": [
         {
-          "title": "Carga de Datos",
-          "code": "import pandas as pd\n\ndata = pd.read_csv('energy_demand.csv')"
+          "title": "Carga de Datos desde Excel",
+          "code": "class DataLoader:\n    @staticmethod\n    def load_data(file_path):\n        df = pd.read_excel(file_path)\n        return df[['Año', 'Enero', 'Febrero', ..., 'Diciembre']]",
+          "image": "project2-extra1.jpg"
         },
         {
-          "title": "Visualización de la Demanda",
-          "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\nsns.lineplot(x='mes', y='demanda', data=data)\nplt.show()"
+          "title": "Procesamiento de Datos",
+          "code": "def _process_data(self):\n    self.df_melted = pd.melt(self.data, id_vars='Año',\n        var_name='Mes', value_name='KWh')\n    self.annual_stats = self.df_melted.groupby('Año')['KWh'].mean().to_dict()",
+          "image": "project2-extra2.jpg"
+        },
+        {
+          "title": "Visualización de Datos",
+          "code": "sns.relplot(data=df_melted, x='Mes', y='KWh', col='Año',\n    kind='line', palette='crest', col_wrap=3, aspect=2)",
+          "image": "project2-extra3.jpg"
+        },
+        {
+          "title": "Pruebas Unitarias",
+          "code": "def test_load_data_success():\n    df = DataLoader.load_data('data/demanda2.xlsx')\n    assert isinstance(df, pd.DataFrame)\n    assert not df.empty"
+        },
+        {
+          "title": "Configuración de Dependencias",
+          "code": "[tool.uv]\ndependencies = [\n    \"matplotlib>=3.10.1\",\n    \"pandas>=2.2.3\",\n    \"seaborn>=0.13.2\"\n]"
         }
       ],
       "downloadLinks": {
-        "pdf": "https://github.com/gillopy/Ande_Demanda_de_Potencia_Mensual/blob/main/forecasting_prophet.ipynb",
-        "ipynb": "https://github.com/gillopy/Ande_Demanda_de_Potencia_Mensual/blob/main/forecasting_prophet.ipynb"
+        "pdf": "https://github.com/gillopy/demanda_de_potencia_max_ande_deployment_uv",
+        "ipynb": "https://github.com/gillopy/demanda_de_potencia_max_ande_deployment_uv"
       },
       "links": {
-        "demo": "https://github.com/gillopy/Ande_Demanda_de_Potencia_Mensual/blob/main/forecasting_prophet.ipynb",
-        "github": "https://github.com/gillopy/Ande_Demanda_de_Potencia_Mensual/blob/main/forecasting_prophet.ipynb"
+        "demo": "https://github.com/gillopy/demanda_de_potencia_max_ande_deployment_uv",
+        "github": "https://github.com/gillopy/demanda_de_potencia_max_ande_deployment_uv"
       }
     },
     {
-      "title": "Retail Sales Forecasting",
-      "description": "Desarrollo de modelos de series temporales para estimar la evolución de las ventas minoristas.",
-      "details": "Este proyecto se centra en la predicción de las ventas de productos minoristas en base a datos históricos. Se utilizaron técnicas de regresión y análisis de series temporales para modelar las tendencias de ventas. Se integraron variables macroeconómicas para mejorar la precisión de las predicciones y se empleó Prophet para el modelado.",
+      "title": "Análisis Climático Global con Datos ERA5",
+      "description": "Visualización avanzada de datos meteorológicos 3D usando modelos ECMWF Copernicus",
+      "details": "Sistema completo para procesamiento y visualización de datos climáticos con:\n- Carga y procesamiento de formatos GRIB/NetCDF\n- Visualizaciones 2D/3D con proyecciones cartográficas\n- Análisis temporal de series climáticas\n- Integración con datos geoespaciales (GeoJSON)\n- Animaciones de evolución temporal\n- Modelado de temperaturas y variables atmosféricas",
       "technologies": [
-        "Python",
-        "Pandas",
-        "Prophet",
-        "Matplotlib"
+        "Python 3.11",
+        "Xarray",
+        "Cartopy",
+        "NetCDF4",
+        "Matplotlib",
+        "GeoPandas",
+        "cfgrib"
       ],
       "image": "project3",
-      "codeSnippets": [
-        {
-          "title": "Carga de Datos",
-          "code": "import pandas as pd\n\ndata = pd.read_csv('retail_sales.csv')"
-        },
-        {
-          "title": "Entrenamiento de Modelo Prophet",
-          "code": "from prophet import Prophet\n\nmodel = Prophet()\nmodel.fit(data)"
-        }
+"codeSnippets": [
+    {
+      "title": "Instalación de Dependencias",
+      "code": "pip install cfgrib cartopy netCDF4 geopandas",
+      "image": "project3-extra1.jpg"
+    },
+    {
+      "title": "Carga de Datos NetCDF4",
+      "code": "import netCDF4 as nc\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport cartopy.crs as ccrs\nimport cartopy.feature as cfeature\n\n# Ruta del archivo .nc (cambia esto por la ubicación de tu archivo)\nfile_path = \"/content/drive/MyDrive/3c7785ed8c7cf99c2ae80fafa694aef4.nc\"\n\n# Cargar el archivo NetCDF4\ndataset = nc.Dataset(file_path, mode=\"r\")\n\n# Obtener las variables necesarias\nt2m = dataset.variables['t2m'][0, :, :]  # Seleccionar el primer 'valid_time'\nlat = dataset.variables['latitude'][:]\nlon = dataset.variables['longitude'][:]\n\n# Convertir a Celsius\nt2m_celsius = t2m - 273.15\n\n# Crear la figura y el mapa\nfig, ax = plt.subplots(figsize=(10, 5), subplot_kw={'projection': ccrs.PlateCarree()})\nax.set_extent([lon.min(), lon.max(), lat.min(), lat.max()], crs=ccrs.PlateCarree())\n\n# Agregar características al mapa\nax.add_feature(cfeature.COASTLINE)\nax.add_feature(cfeature.BORDERS, linestyle=':')\nax.add_feature(cfeature.LAND, edgecolor='black')\nax.add_feature(cfeature.LAKES, edgecolor='black')\nax.add_feature(cfeature.RIVERS, edgecolor='blue')\n\n# Dibujar la temperatura\nc = ax.pcolormesh(lon, lat, t2m_celsius, cmap='coolwarm', transform=ccrs.PlateCarree())\n\n# Agregar barra de color\ncbar = plt.colorbar(c, orientation='horizontal', pad=0.05)\ncbar.set_label('2m Temperature (°C)')\n\n# Título del gráfico\nplt.title(\"2m Temperature from ECMWF\")\n\n# Mostrar el gráfico\nplt.show()\n\n# Cerrar el dataset\ndataset.close()",
+      "image": "project3-extra2.jpg"
+    },
+    {
+      "title": "Visualización con Cartopy y GRIB",
+      "code": "import numpy as np\nimport xarray as xr\nimport cfgrib\nimport geopandas as gpd\nimport matplotlib.pyplot as plt\nimport cartopy.crs as ccrs\nimport cartopy.feature as cfeature\nimport warnings\n\n# Ignorar advertencias específicas\nwarnings.filterwarnings(\"ignore\", category=FutureWarning)\nwarnings.filterwarnings(\"ignore\", category=UserWarning)\n\n# Ruta del archivo GRIB (modifica según tu ubicación)\nfile_path = \"/content/drive/MyDrive/53ff69f95521585163052af17eefd0c1.grib\"\n\n# Ruta del archivo GeoJSON (modifica según tu ubicación)\ngeojson_path = \"/content/drive/MyDrive/DEPARTAMENTOS_PY_CNPV2022.geojson.txt\"\n\n# Cargar el dataset GRIB\ndata = xr.open_dataset(file_path, engine='cfgrib')\n\n# Extraer temperatura y coordenadas\nlons = data.longitude.values\nlats = data.latitude.values\ntemp = data.stl2.values[0] - 273.15  # Convertir de Kelvin a Celsius\n\n# Cargar el archivo GeoJSON\ngdf = gpd.read_file(geojson_path)\n\n# Crear la figura con una proyección ortográfica centrada en Sudamérica\nfig = plt.figure(figsize=(12, 12))  # Hacer la figura cuadrada para un efecto más esférico\nax = fig.add_subplot(111, projection=ccrs.Orthographic(central_longitude=-60, central_latitude=-15))  # Centro en Sudamérica\n\n# Agregar características del mapa\nax.add_feature(cfeature.LAND, edgecolor='black')\nax.add_feature(cfeature.OCEAN)\nax.add_feature(cfeature.COASTLINE)\nax.add_feature(cfeature.BORDERS, linestyle='-')\n\n# Dibujar el límite del mapa\nax.gridlines(draw_labels=False, linestyle=\"--\", color=\"gray\", alpha=0.5)\n\n# Proyectar los datos de temperatura con el mismo sistema de referencia\nvmin, vmax = -40, 40  # Rango de temperatura en grados Celsius\nmesh = ax.imshow(temp, extent=[lons.min(), lons.max(), lats.min(), lats.max()]\n                 transform=ccrs.PlateCarree(), cmap='coolwarm', origin='upper', vmin=vmin, vmax=vmax)\n\n# Agregar límites de los departamentos desde el GeoJSON\ngdf.boundary.plot(ax=ax, edgecolor=\"black\", linewidth=1.2, transform=ccrs.PlateCarree())\n\n# Agregar barra de colores\ncbar = plt.colorbar(mesh, orientation='horizontal', pad=0.05, extend='both')\ncbar.set_label('Temperature (°C)')\ncbar.set_ticks(np.arange(vmin, vmax + 10, 10))\n\n# Agregar título\nplt.title('ERA5-Pressure-levels, Daily Mean Temperature at 1000 hPa\\n2025-02-07 (UTC)')\n\n# Mostrar la figura\nplt.show()",
+      "image": "project3-extra3.jpg"
+    },
+    {
+      "title": "Visualización con Cartopy y GeoJSON",
+      "code": "import numpy as np\nimport xarray as xr\nimport cfgrib\nimport geopandas as gpd\nimport matplotlib.pyplot as plt\nimport cartopy.crs as ccrs\nimport cartopy.feature as cfeature\nimport warnings\n\n# Ignorar advertencias específicas\nwarnings.filterwarnings(\"ignore\", category=FutureWarning)\nwarnings.filterwarnings(\"ignore\", category=UserWarning)\n\n# Ruta del archivo GRIB (modifica según tu ubicación)\nfile_path = \"/content/drive/MyDrive/53ff69f95521585163052af17eefd0c1.grib\"\n\n# Ruta del archivo GeoJSON (modifica según tu ubicación)\ngeojson_path = \"/content/drive/MyDrive/DEPARTAMENTOS_PY_CNPV2022.geojson.txt\"\n\n# Cargar el dataset GRIB\ndata = xr.open_dataset(file_path, engine='cfgrib')\n\n# Extraer temperatura y coordenadas\nlons = data.longitude.values\nlats = data.latitude.values\ntemp = data.stl2.values[0] - 273.15  # Convertir de Kelvin a Celsius\n\n# Cargar el archivo GeoJSON\ngdf = gpd.read_file(geojson_path)\n\n# Crear la figura con un zoom más adecuado\nfig = plt.figure(figsize=(15, 10))\nax = fig.add_subplot(111, projection=ccrs.PlateCarree())  # Cambié a PlateCarree para evitar distorsiones\n\n# Configurar la extensión del mapa para Sudamérica\nax.set_extent([-85, -30, -60, 15], crs=ccrs.PlateCarree())  # Desde el Pacífico hasta Brasil y Venezuela\n\n# Agregar características del mapa\nax.add_feature(cfeature.LAND, edgecolor='black')\nax.add_feature(cfeature.OCEAN)\nax.add_feature(cfeature.COASTLINE)\nax.add_feature(cfeature.BORDERS, linestyle='-')\n\n# Agregar límites de los departamentos desde el GeoJSON\ngdf.boundary.plot(ax=ax, edgecolor=\"black\", linewidth=1.2, transform=ccrs.PlateCarree())\n\n# Crear el mapa y proyectar los datos con un rango de temperatura más adecuado\nvmin, vmax = -40, 40  # Rango de temperatura en grados Celsius\nmesh = ax.imshow(temp, extent=[lons.min(), lons.max(), lats.min(), lats.max()]\n                 transform=ccrs.PlateCarree(), cmap='coolwarm', origin='upper', vmin=vmin, vmax=vmax)\n\n# Agregar barra de colores\ncbar = plt.colorbar(mesh, orientation='horizontal', pad=0.05, extend='both')\ncbar.set_label('Temperature (°C)')\ncbar.set_ticks(np.arange(vmin, vmax + 10, 10))\n\n# Agregar título\nplt.title('ERA5-Pressure-levels, Daily Mean Temperature at 1000 hPa\\n2025-02-07 (UTC)')\n\n# Mostrar la figura\nplt.show()",
+      "image": "project3-extra4.jpg"
+    }
       ],
       "downloadLinks": {
-        "pdf": "https://github.com/gillopy/Coding_Dojo_DS_ML",
-        "ipynb": "https://github.com/gillopy/Coding_Dojo_DS_ML"
+        "pdf": "https://github.com/gillopy/Era5data3D",
+        "ipynb": "https://github.com/gillopy/Era5data3D"
       },
       "links": {
-        "demo": "https://github.com/gillopy/Coding_Dojo_DS_ML",
-        "github": "https://github.com/gillopy/Coding_Dojo_DS_ML"
+        "demo": "https://github.com/gillopy/Era5data3D",
+        "github": "https://github.com/gillopy/Era5data3D"
       }
     }
   ],

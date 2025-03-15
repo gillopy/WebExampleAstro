@@ -699,7 +699,6 @@ section {
   }
   .hero-content {
     flex-direction: column;
-    text-align: center;
     gap: 2rem;
   }
   .hero-text h1 {
@@ -720,7 +719,7 @@ section {
     width: 100%;
   }
   .hero-image {
-    max-width: 80%;
+    max-width: 100%;
     width: auto;
     margin: 0 auto;
   }
@@ -742,7 +741,7 @@ section {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 70%;
+    width: 50%;
     height: 100vh;
     background-color: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);

@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 interface CodeSnippet {
   title: string;
   code: string;
+  image?: string; // Agregada la propiedad image
 }
 
 interface Project {
@@ -28,7 +29,6 @@ const { project } = Astro.props as { project: Project };
 ---
 
 <section id="project-details" class="project-details">
-  <!-- Botón para redirigir hacia atrás -->
   <div class="back-button">
     <a href="javascript:history.back()" class="btn btn-secondary">Atrás</a>
   </div>
@@ -39,7 +39,7 @@ const { project } = Astro.props as { project: Project };
         <div class="project-details-content">
           <div class="project-image">
             <Image 
-              src={`/project/${project.image}.svg`} 
+              src={`/project/${project.image}.jpg`} 
               alt={project.title} 
               width={600} 
               height={400}
@@ -60,42 +60,34 @@ const { project } = Astro.props as { project: Project };
                 <span class="technology">{tech}</span>
               ))}
             </div>
-
-            {/* Mostrar imágenes adicionales */}
-            {project.additionalImages && (
-              <>
-                <h3>Imágenes Adicionales</h3>
-                <div class="additional-images">
-                  {project.additionalImages.map((img: string) => (
-                    <Image
-                      src={`/project/${img}`}
-                      alt={`${project.title} - Imagen adicional`}
-                      class="additional-image"
-                      width={600}
-                      height={400}
-                      loading="lazy"
-                    />
-                  ))}
-                </div>
-              </>
-            )}
-
-            {/* Mostrar bloques de código */}
-            {project.codeSnippets && (
-              <>
-                <h3>Bloques de Código</h3>
-                <div class="code-snippets">
-                  {project.codeSnippets.map((snippet: CodeSnippet) => (
-                    <div class="code-snippet">
-                      <h4>{snippet.title}</h4>
-                      <pre>
-                        <code>{snippet.code}</code>
-                      </pre>
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
+{/* Alternar Snippets de Código e Imágenes Adicionales */}
+{project.codeSnippets && project.codeSnippets.length > 0 && (
+  <>
+    <h3>Detalles Técnicos</h3>
+    <div class="technical-details">
+      {project.codeSnippets.map((snippet, index) => (
+        <div key={index} class="code-snippet">
+          <h4>{snippet.title}</h4>
+          <pre>
+            <code>{snippet.code}</code>
+          </pre>
+          {snippet.image && (
+            <div class="additional-image-container">
+              <Image
+                src={`/project/${snippet.image}`}
+                alt={`Imagen técnica - ${snippet.title}`}
+                class="additional-image"
+                width={600}
+                height={400}
+                loading="lazy"
+              />
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </>
+)}
 
             {/* Mostrar enlaces de descarga */}
             {project.downloadLinks && (
