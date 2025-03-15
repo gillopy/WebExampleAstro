@@ -8,7 +8,7 @@ const { contact } = data;
     <h2 class="section-title">{contact.title}</h2>
     <div class="contact-container">
       <div class="contact-info">
-        <h3>¿Hablamos?</h3>
+        <h3>¿Desea hablar?</h3>
         <p>{contact.description}</p>
         <div class="info-item">
           <div class="info-icon">
@@ -34,15 +34,14 @@ const { contact } = data;
           </div>
         </div>
       </div>
-      <form class="contact-form">
+      <form action="https://formspree.io/f/manenneo" method="POST" class="contact-form">
         <div class="form-group">
-          <input type="text" placeholder="Nombre" required />
+          <label for="email">Tu Email:</label>
+          <input type="email" id="email" name="email" placeholder="Tu email" required>
         </div>
         <div class="form-group">
-          <input type="email" placeholder="Email" required />
-        </div>
-        <div class="form-group">
-          <textarea rows="5" placeholder="Mensaje" required></textarea>
+          <label for="message">Tu Mensaje:</label>
+          <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
       </form>
