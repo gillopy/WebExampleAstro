@@ -40,16 +40,27 @@ const { skills } = data;
             </div>
           ))}
         </div>
-
-        <div class="tools-container">
-          <h3>Herramientas y Tecnologías</h3>
-          <div class="tools-grid">
-            {skills.tools.map((tool) => (
-              <div class="tool">{tool}</div>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
+
+    <!-- Sección de Herramientas y Tecnologías centrada y más ancha -->
+    <div class="tools-container" style="margin-top: 2rem; text-align: center;">
+      <h3>Herramientas y Tecnologías</h3>
+      <div 
+        class="tools-grid" 
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 1rem;
+          max-width: 800px;
+          margin: 0 auto;
+        "
+      >
+        {skills.tools.map((tool) => (
+          <div class="tool">{tool}</div>
+        ))}
+      </div>
+    </div>
+
   </div>
 </section>

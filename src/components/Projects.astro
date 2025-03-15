@@ -34,7 +34,7 @@ const { projects } = data;
                 width={600}
                 height={400}
                 class="project-img"
-                loading="lazy" 
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -47,14 +47,14 @@ const { projects } = data;
                 ))}
               </div>
               <div class="project-links">
-                <a 
-                  href={`/project/${project.image}`} 
+                <a
+                  href={`/project/${project.image}`}
                   class="btn btn-primary"
                 >
                   Ver Proyecto
                 </a>
-                <a 
-                  href={project.links.github} 
+                <a
+                  href={project.links.github}
                   class="btn btn-outline"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -65,6 +65,16 @@ const { projects } = data;
             </div>
           </div>
         ))}
+      </div>
+
+      <!-- Botón "Ver más proyectos" centrado -->
+      <div class="view-more-projects" style="text-align: center; margin-top: 2rem;">
+        <a 
+          href={data.viewMoreProjectsLink} 
+          class="btn btn-primary"
+        >
+          Ver Más Proyectos
+        </a>
       </div>
     </div>
   </section>
