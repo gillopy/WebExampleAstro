@@ -1,5 +1,5 @@
 /* =============================================================================
-   VARIABLES GLOBALES
+   1. VARIABLES GLOBALES
 ============================================================================= */
 :root {
   /* Colores */
@@ -18,14 +18,16 @@
 }
 
 /* =============================================================================
-   RESET Y ESTILOS BASE
+   2. RESET Y ESTILOS BASE
 ============================================================================= */
+/* Reset global */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Estilos base para html y body */
 html,
 body {
   width: 100%;
@@ -37,9 +39,18 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Contenedor centralizado */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
 /* =============================================================================
-   TIPOGRAFÍA Y ENLACES
+   3. TIPOGRAFÍA Y ENLACES
 ============================================================================= */
+/* Tipografía */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5em;
   font-weight: 600;
@@ -50,6 +61,7 @@ p {
   margin-bottom: 1.5em;
 }
 
+/* Enlaces y efectos */
 a {
   color: var(--color-accent);
   text-decoration: none;
@@ -59,7 +71,7 @@ a {
 a:hover {
   color: var(--color-accent-light);
 }
-/* Subrayado animado en enlaces (excepto en navegación o logo) */
+/* Subrayado animado en enlaces (excepto navegación o logo) */
 a:not(.nav-link, .logo):hover::after {
   content: '';
   position: absolute;
@@ -73,23 +85,17 @@ a:not(.nav-link, .logo):hover::after {
   transition: transform var(--transition-speed) var(--transition-timing);
 }
 
+/* Imágenes */
 img {
   max-width: 100%;
   height: auto;
   transition: transform var(--transition-speed) var(--transition-timing);
 }
 
-/* Contenedor centralizado */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
 /* =============================================================================
-   BOTONES
+   4. BOTONES Y VARIANTES
 ============================================================================= */
+/* Botón base */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -107,7 +113,7 @@ img {
   transition: all var(--transition-speed) var(--transition-timing);
 }
 
-/* Hover y active en botones */
+/* Efectos hover y active */
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -168,12 +174,14 @@ img {
 }
 
 /* =============================================================================
-   SECCIONES Y TÍTULOS
+   5. SECCIONES Y TÍTULOS GENERALES
 ============================================================================= */
+/* Secciones */
 section {
   padding: 5rem 0;
 }
 
+/* Título de secciones */
 .section-title {
   text-align: center;
   margin-bottom: 3rem;
@@ -194,7 +202,7 @@ section {
 }
 
 /* =============================================================================
-   HERO SECTION
+   6. HERO SECTION
 ============================================================================= */
 .hero {
   padding: 6rem 0 3rem;
@@ -244,7 +252,7 @@ section {
   margin: 0 auto;
 }
 
-/* Imagen de perfil con animación */
+/* Imagen de perfil con animación en Hero */
 .profile-image {
   width: 100%;
   border-radius: 8px;
@@ -258,7 +266,7 @@ section {
 }
 
 /* =============================================================================
-   ABOUT SECTION
+   7. ABOUT SECTION
 ============================================================================= */
 .about {
   background-color: var(--color-background);
@@ -335,7 +343,7 @@ section {
 }
 
 /* =============================================================================
-   PROJECTS SECTION
+   8. PROJECTS SECTION
 ============================================================================= */
 .projects {
   background-color: var(--color-background);
@@ -426,37 +434,8 @@ section {
 }
 
 /* =============================================================================
-   SKILLS SECTION: Herramientas y Tecnologías
+   9. SKILLS SECTION Y HERRAMIENTAS
 ============================================================================= */
-.tools-container {
-  margin-top: 3rem;
-}
-.tools-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-}
-.tool {
-  background-color: var(--color-background);
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  text-align: center;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--color-secondary);
-  transition: transform var(--transition-speed) var(--transition-timing),
-              box-shadow var(--transition-speed) var(--transition-timing),
-              border-color var(--transition-speed) var(--transition-timing),
-              color var(--transition-speed) var(--transition-timing);
-}
-.tool:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-color: var(--color-accent-light);
-  color: var(--color-accent);
-}
-
 .skills {
   background-color: var(--color-background);
   padding: 5rem 0;
@@ -520,8 +499,38 @@ section {
   to { opacity: 0; }
 }
 
+/* Contenedor de herramientas (skills adicionales) */
+.tools-container {
+  margin-top: 3rem;
+}
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+.tool {
+  background-color: var(--color-background);
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-secondary);
+  transition: transform var(--transition-speed) var(--transition-timing),
+              box-shadow var(--transition-speed) var(--transition-timing),
+              border-color var(--transition-speed) var(--transition-timing),
+              color var(--transition-speed) var(--transition-timing);
+}
+.tool:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
 /* =============================================================================
-   CONTACTO
+   10. CONTACTO
 ============================================================================= */
 .contact {
   background-color: var(--color-background);
@@ -603,7 +612,7 @@ section {
 }
 
 /* =============================================================================
-   HEADER Y NAVEGACIÓN
+   11. HEADER Y NAVEGACIÓN
 ============================================================================= */
 .header {
   position: fixed;
@@ -688,7 +697,7 @@ section {
 }
 
 /* =============================================================================
-   RESPONSIVE DESIGN PARA NAVEGACIÓN Y SECCIONES
+   12. RESPONSIVE DESIGN PARA NAVEGACIÓN Y SECCIONES
 ============================================================================= */
 @media (max-width: 768px) {
   .container {
@@ -775,9 +784,9 @@ section {
 }
 
 /* =============================================================================
-   BLOQUES DE CÓDIGO E IMÁGENES ADICIONALES
+   13. BLOQUES DE CÓDIGO E IMÁGENES ADICIONALES
 ============================================================================= */
-/* Estilos para bloques de código */
+/* Bloques de código */
 .code-snippet {
   margin: 2rem 0;
 }
@@ -801,7 +810,7 @@ section {
   white-space: pre;
 }
 
-/* Mejoras para imágenes en proyectos o adicionales */
+/* Imágenes adicionales en proyectos u otros */
 .project-img,
 .additional-image {
   display: block;
@@ -819,7 +828,7 @@ section {
 }
 
 /* =============================================================================
-   CLASES AUXILIARES
+   14. CLASES AUXILIARES
 ============================================================================= */
 /* Centrado de imágenes */
 .center-image {

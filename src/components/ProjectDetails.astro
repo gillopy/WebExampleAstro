@@ -66,7 +66,7 @@ const { project } = Astro.props as { project: Project };
     <h3>Detalles Técnicos</h3>
     <div class="technical-details">
       {project.codeSnippets.map((snippet, index) => (
-        <div key={index} class="code-snippet">
+        <div class="code-snippet">
           <h4>{snippet.title}</h4>
           <pre>
             <code>{snippet.code}</code>

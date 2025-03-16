@@ -3,6 +3,8 @@
     "name": "Guillermo Cabrera",
     "title": "Economista, Estadístico y Científico de Datos",
     "email": "guillermocabrera9710@hotmail.com",
+    "linkedin": "https://linkedin.com/in/gillo-cabrera",
+    "github": "https://github.com/gillopy/",
     "location": "Asunción, Paraguay",
     "availability": "Tiempo completo, Remoto",
     "summary": "Manejo de modelos de aprendizaje profundo para forecasting, analisis de series temporales y clasificacion de datos. Conocimientos avanzados en econometria, estadistica descriptiva e inferencial. Facilidad en estructurar y desplegar modelos de machine learning en entornos de producción.",
@@ -37,6 +39,7 @@
       "PyTorch",
       "Scikit-learn",
       "Statsforecast",
+      "Neuronalforecast",
       "Keras",
       "XGBoost",
       "Statsmodels",
@@ -48,7 +51,10 @@
       "UV",
       "Xarray",
       "Geopandas",
-      "Matplotlib"
+      "Matplotlib",
+      "Numpy",
+      "Pandas",
+      "Seaborn"
     ]
   },
   "projects": [
@@ -197,7 +203,7 @@
   ],
   "viewMoreProjectsLink": "https://github.com/gillopy/Coding_Dojo_DS_ML",
   "contact": {
-    "title": "Contacto",
+    "titlecontact": "Contacto",
     "description": "Si tiene alguna consulta o desea discutir una posible colaboración, por favor utilice el formulario a continuación. Estaré encantado de responder a su mensaje lo antes posible.",
     "email": "guillermocabrera9710@hotmail.com",
     "location": "Asunción, Paraguay"
