@@ -700,9 +700,7 @@ section {
    12. RESPONSIVE DESIGN PARA NAVEGACIÓN Y SECCIONES
 ============================================================================= */
 @media (max-width: 768px) {
-  .container {
-    padding: 0 1.5rem;
-  }
+
   section {
     padding: 3rem 0;
   }
