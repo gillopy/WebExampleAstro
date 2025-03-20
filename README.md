@@ -1,48 +1,60 @@
-# Astro Starter Kit: Basics
+# 🚀 Guillermo Cabrera - Portfolio & CV
 
-```sh
-npm create astro@latest -- --template basics
+### Economista | Científico de Datos | Especialista en Machine Learning
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/gillo-cabrera)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/gillopy)
+[![Descargar CV](https://img.shields.io/badge/CV_Descargable-%23000000.svg?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://drive.google.com/file/d/1cq8z85D03Rfh30dshp7ovlro32eu4e_q/view)
+
+## 🌟 Características Principales
+
+- ✅ Portfolio profesional con proyectos destacados
+- 📊 Visualización interactiva de habilidades técnicas
+- 🔍 Detalles técnicos de implementaciones ML/DL
+- 📱 Diseño responsive y accesible
+- 📥 Sistema de contacto integrado
+
+## 🚀 Proyectos Destacados
+
+### 1. Sistema de Predicción de Enfermedades Cardíacas
+Pipeline completo de machine learning con XGBoost y despliegue Docker
+
+**Tecnologías:** Python • XGBoost • Scikit-learn • Docker • Poetry
+
+### 2. Análisis de Demanda Eléctrica ANDE
+Plataforma de visualización de consumo energético con análisis temporal
+
+**Tecnologías:** Pandas • Matplotlib • Seaborn • Pytest • UV
+
+### 3. Visualización Climática ERA5 3D
+Sistema avanzado de procesamiento de datos meteorológicos ECMWF
+
+**Tecnologías:** Xarray • Cartopy • NetCDF4 • GeoPandas • Matplotlib
+
+## 🛠 Stack Tecnológico
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+
+## ⚙️ Instalación Local
+
+```
+git clone https://github.com/gillopy/portfolio.git
+cd portfolio
+npm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🚦 Comandos Útiles
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+npm run dev    # Inicia servidor local en localhost:4321
+npm run build  # Genera versión de producción
+npm run preview # Previsualiza build local
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 📄 Licencia
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+MIT License © 2024 Guillermo Cabrera
