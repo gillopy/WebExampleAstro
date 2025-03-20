@@ -6,7 +6,7 @@
   --color-primary: #075985;       /* Azul medio oscuro */
   --color-secondary: #1f2937;     /* Gris azulado oscuro */
   --color-accent: #0284c7;        /* Azul brillante */
-  --color-accent-light: #38bdf8;  /* Azul claro para contrastes */
+  --color-accent-light: #1fabe7;  /* Azul claro para contrastes */
   --color-background: #f3f4f6;    /* Gris muy claro */
   --color-text: #030712;          /* Negro puro */
   --color-text-light: #4b5563;    /* Gris oscuro */
@@ -56,7 +56,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.3;
 }
-
 p {
   margin-bottom: 1.5em;
 }
@@ -71,7 +70,6 @@ a {
 a:hover {
   color: var(--color-accent-light);
 }
-/* Subrayado animado en enlaces (excepto navegación o logo) */
 a:not(.nav-link, .logo):hover::after {
   content: '';
   position: absolute;
@@ -112,8 +110,6 @@ img {
   z-index: 1;
   transition: all var(--transition-speed) var(--transition-timing);
 }
-
-/* Efectos hover y active */
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -160,9 +156,8 @@ img {
 }
 .btn-primary:hover {
   background-color: var(--color-accent-light);
-  color: #fff; /* O usa var(--color-text) si tienes una variable definida */
+  color: #fff;
 }
-
 .btn-outline {
   background-color: transparent;
   color: var(--color-accent);
@@ -245,13 +240,12 @@ section {
   flex: 1;
   width: auto;
   height: auto;
-  max-width: 600px; /* Aumentado de 600px a 800px */
+  max-width: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
 }
-
 /* Imagen de perfil con animación en Hero */
 .profile-image {
   width: 100%;
@@ -263,6 +257,36 @@ section {
 .profile-image:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive para Hero Section */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .hero-text h2 {
+    font-size: 1.1rem;
+  }
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+  .hero-btns {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero-btns .btn {
+    max-width: none;
+    width: 100%;
+  }
+  .hero-image {
+    max-width: 100%;
+    width: auto;
+    margin: 0 auto;
+  }
 }
 
 /* =============================================================================
@@ -283,7 +307,6 @@ section {
   justify-content: center;
   align-items: center;
 }
-/* Contenedor circular para imagen con borde y animación */
 .image-border {
   width: 300px;
   height: 300px;
@@ -340,6 +363,20 @@ section {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+/* Responsive para About Section */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .about-details {
+    grid-template-columns: 1fr;
+  }
+  .about-buttons .btn {
+    width: 100%;
+  }
 }
 
 /* =============================================================================
@@ -430,7 +467,6 @@ section {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-top: 2rem;
 }
 
 /* =============================================================================
@@ -510,7 +546,7 @@ section {
 }
 .tool {
   background-color: var(--color-background);
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
   border: 1px solid var(--color-border);
   border-radius: 4px;
   text-align: center;
@@ -540,6 +576,7 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
+  margin: auto;
 }
 .contact-info {
   padding-right: 2rem;
@@ -604,7 +641,7 @@ section {
   outline: none;
 }
 
-/* Responsive para la sección de Contacto */
+/* Responsive para Contacto Section */
 @media (max-width: 768px) {
   .contact-container {
     grid-template-columns: 1fr;
@@ -696,54 +733,10 @@ section {
   transition: all var(--transition-speed) var(--transition-timing);
 }
 
-/* =============================================================================
-   12. RESPONSIVE DESIGN PARA NAVEGACIÓN Y SECCIONES
-============================================================================= */
+/* Responsive para Navegación y menú móvil */
 @media (max-width: 768px) {
   .container {
     padding: 0 1.5rem;
-  }
-  section {
-    padding: 3rem 0;
-  }
-  .hero-content {
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-  .hero-text h2 {
-    font-size: 1.1rem;
-  }
-  .hero-text p {
-    font-size: 0.95rem;
-  }
-  .hero-btns {
-    flex-direction: column;
-    justify-content: center;
-  }
-  .hero-btns .btn {
-    max-width: none;
-    width: 100%;
-  }
-  .hero-image {
-    max-width: 100%;
-    width: auto;
-    margin: 0 auto;
-  }
-  .about-content {
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .about-details {
-    grid-template-columns: 1fr;
-  }
-  .about-buttons .btn {
-    width: 100%;
-  }
-  .mobile-toggle {
-    display: flex;
   }
   /* Menú móvil */
   .nav {
@@ -772,6 +765,9 @@ section {
     font-size: 1.2rem;
   }
   /* Animación del toggle móvil */
+  .mobile-toggle {
+    display: flex;
+  }
   .mobile-toggle.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
@@ -784,7 +780,7 @@ section {
 }
 
 /* =============================================================================
-   13. BLOQUES DE CÓDIGO E IMÁGENES ADICIONALES
+   12. BLOQUES DE CÓDIGO E IMÁGENES ADICIONALES
 ============================================================================= */
 /* Bloques de código */
 .code-snippet {
@@ -814,7 +810,7 @@ section {
 .project-img,
 .additional-image {
   display: block;
-  margin: 2rem 0;
+  margin: 2rem auto;
   width: 80%;
   height: auto;
   object-fit: cover;
@@ -828,7 +824,7 @@ section {
 }
 
 /* =============================================================================
-   14. CLASES AUXILIARES
+   13. CLASES AUXILIARES
 ============================================================================= */
 /* Centrado de imágenes */
 .center-image {

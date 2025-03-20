@@ -4,7 +4,7 @@ import { Image } from 'astro:assets';
 interface CodeSnippet {
   title: string;
   code: string;
-  image?: string; // Agregada la propiedad image
+  image?: string;
 }
 
 interface Project {
@@ -36,7 +36,9 @@ const { project } = Astro.props as { project: Project };
     {project ? (
       <>
         <h2 class="section-title">{project.title}</h2>
-        <div class="project-details-content">
+        {/* Contenedor principal en columna */}
+        <div class="project-details-content" style="display: flex; flex-direction: column; gap: 2rem;">
+          {/* Imagen principal en la parte superior */}
           <div class="project-image">
             <Image 
               src={`/project/${project.image}.jpg`} 
@@ -47,6 +49,8 @@ const { project } = Astro.props as { project: Project };
               loading="eager"
             />
           </div>
+
+          {/* Información del proyecto debajo de la imagen */}
           <div class="project-info">
             <h3>Descripción</h3>
             <p>{project.description}</p>
@@ -55,45 +59,62 @@ const { project } = Astro.props as { project: Project };
             <p>{project.details}</p>
 
             <h3>Tecnologías Utilizadas</h3>
-            <div class="project-technologies">
+            <div class="project-technologies" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
               {project.technologies.map((tech: string) => (
                 <span class="technology">{tech}</span>
               ))}
             </div>
-{/* Alternar Snippets de Código e Imágenes Adicionales */}
-{project.codeSnippets && project.codeSnippets.length > 0 && (
-  <>
-    <h3>Detalles Técnicos</h3>
-    <div class="technical-details">
-      {project.codeSnippets.map((snippet, index) => (
-        <div class="code-snippet">
-          <h4>{snippet.title}</h4>
-          <pre>
-            <code>{snippet.code}</code>
-          </pre>
-          {snippet.image && (
-            <div class="additional-image-container">
-              <Image
-                src={`/project/${snippet.image}`}
-                alt={`Imagen técnica - ${snippet.title}`}
-                class="additional-image"
-                width={600}
-                height={400}
-                loading="lazy"
-              />
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
-  </>
-)}
 
-            {/* Mostrar enlaces de descarga */}
+            {/* Snippets de Código con estilo de editor, números de línea y botón para copiar */}
+            {project.codeSnippets && project.codeSnippets.length > 0 && (
+              <>
+                <h3>Detalles Técnicos</h3>
+                <div class="technical-details" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                  {project.codeSnippets.map((snippet, index) => (
+                    <div class="code-snippet">
+                      <h4>{snippet.title}</h4>
+                      <div class="code-editor" style="background: #f3f4f6; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.2); position: relative;">
+                        {/* Barra de herramientas del editor */}
+                        <div class="editor-header" style="background: #075985; padding: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                          <div style="display: flex; gap: 0.5rem;">
+                            <span style="width: 12px; height: 12px; background: #ff5f56; border-radius: 50%; display: inline-block;"></span>
+                            <span style="width: 12px; height: 12px; background: #ffbd2e; border-radius: 50%; display: inline-block;"></span>
+                            <span style="width: 12px; height: 12px; background: #27c93f; border-radius: 50%; display: inline-block;"></span>
+                          </div>
+                        </div>
+                        {/* Contenido del código con números de línea */}
+                        <pre style="margin: 0; background: #f3f4f6; color: #030712; padding: 1rem; font-family: 'Source Code Pro', monospace; font-size: 0.9rem; overflow-x: auto;">
+                          {snippet.code.split('\n').map((line, idx) => (
+                            <div style="display: flex;">
+                              <span style="display: inline-block; width: 2rem; text-align: right; margin-right: 1rem; color: #6b7280;">{idx + 1}</span>
+                              <span style="flex: 1; white-space: pre;">{line}</span>
+                            </div>
+                          ))}
+                        </pre>
+                      </div>
+                      {snippet.image && (
+                        <div class="additional-image-container" style="margin-top: 1rem;">
+                          <Image
+                            src={`/project/${snippet.image}`}
+                            alt={`Imagen técnica - ${snippet.title}`}
+                            class="additional-image"
+                            width={600}
+                            height={400}
+                            loading="lazy"
+                          />
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {/* Enlaces de descarga */}
             {project.downloadLinks && (
               <>
                 <h3>Descargas</h3>
-                <div class="download-links">
+                <div class="download-links" style="display: flex; gap: 1rem; flex-wrap: wrap;">
                   <a href={project.downloadLinks.pdf} class="btn btn-primary" download>
                     Descargar PDF
                   </a>
@@ -104,8 +125,8 @@ const { project } = Astro.props as { project: Project };
               </>
             )}
 
-            <div class="project-links">
-              <a href={project.links.demo} class="btn btn-primary">Ver Demo</a>
+            {/* Botones de enlaces */}
+            <div class="project-links" style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
               <a href={project.links.github} class="btn btn-outline">Ver en GitHub</a>
             </div>
           </div>
@@ -115,4 +136,5 @@ const { project } = Astro.props as { project: Project };
       <p>Proyecto no encontrado.</p>
     )}
   </div>
+
 </section>
